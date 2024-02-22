@@ -54,7 +54,7 @@
         honeypot.<br>
         ftp will be enabled by default, but any other services and protocols should be enabled manually.<br>
         There is an option to enable notifications via email in case of an event. To set that up, I used a custom python
-        <a href="/Misc/notes/tools/log-reader.py" target="_blank" rel="noopener nofollow noreferrer">script</a> to send
+        <a href="/Notes/Misc/notes/tools/log-reader.py" target="_blank" rel="noopener nofollow noreferrer">script</a> to send
         mails.<br>
         Place this python file at this location "env/logtool/log-reader.py". Then add the below line in `crontab -e` to
         automate the notifying process.<br>
@@ -63,7 +63,7 @@
         </code>
 
         Create a service for opencanary to run at startup. Creation a service is discussed in this <a
-            href="/Work/self_cloud.html" target="_blank" rel="noopener nofollow noreferrer">tutorial</a>.<br>
+            href="https:suchitreddi.github.io/Work/self_cloud.html" target="_blank" rel="noopener nofollow noreferrer">tutorial</a>.<br>
         After setting up all this, we can enable more protocols like ssh, telnet, etc in the config file by changing it
         to enabled.<br>
         You can customize the email alerts on so that only new events are sent by updating the log-reader.py file.<br>
@@ -78,9 +78,9 @@
             target="_blank" rel="noopener nofollow noreferrer">this</a> guide out.<br>
 
         The configuration of the honeypot is done in the config file. I copied my final <a
-            href="/Misc/notes/tools/monitoring/opencanary.conf" target="_blank" rel="noopener nofollow noreferrer">config</a> file to locations like <code>/root/.opencanary.config</code> where opencanary checks for config files.<br>
+            href="/Notes/Misc/notes/tools/monitoring/opencanary.conf" target="_blank" rel="noopener nofollow noreferrer">config</a> file to locations like <code>/root/.opencanary.config</code> where opencanary checks for config files.<br>
         
-        To send important events as alerts to mail, I developed a <a href="/Misc/notes/tools/monitoring/log-reader.py" target="_blank" rel="noopener nofollow noreferrer">script</a>. This script is run every minute using cron job.<br>
+        To send important events as alerts to mail, I developed a <a href="/Notes/Misc/notes/tools/monitoring/log-reader.py" target="_blank" rel="noopener nofollow noreferrer">script</a>. This script is run every minute using cron job.<br>
         crontab -e<br>
         Add this below line at the end of the file.<br>
         <code>
@@ -89,7 +89,7 @@
 
         The mail received from this script looks like this:<br>
         <center>
-        <img style="max-width: 60%; max-height: 60%;" src="/Misc/notes/tools/monitoring/mail_alert.png" alt="mail alerts from opencanary"><br>
+        <img style="max-width: 60%; max-height: 60%;" src="/Notes/Misc/notes/tools/monitoring/mail_alert.png" alt="mail alerts from opencanary"><br>
         </center>
 
         <b>References:</b><br>
