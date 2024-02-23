@@ -51,4 +51,8 @@ Just add a new line to the ending of .bashrc or .zshrc (whatever your default sh
 echo Running at boot...
 sudo python /home/pi/test.py
 
+You can also use crontab -e and add the command in the end to run it. You can also customize the time.
+You can use "https://crontab.guru/" to know more abot the timing of crontab.
+
+*/1 * * * * sudo python3 /home/sherl0ck/env/logtool/log-reader.py
 
