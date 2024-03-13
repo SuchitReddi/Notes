@@ -3,10 +3,13 @@
 1) Install Pi Imager tool, Putty and VNC Viewer
 Download and install Raspberry Pi Imager tool for flashing the OS images. You will need Putty and VNC Viewer to access Pi.
 
-1) Flashing OS
+2) Flashing OS
 Flash os onto the sd card using raspberry pi imager tool. Enable ssh from advanced options (Press ctrl+shift+x in the imager).
+Set the username and password to pi beforehand, connect to wifi if possible.
 
-
+3) Enabling vnc
+Once you are booted up, if you connected it to your wifi beforehand, obtain IP and login via ssh.
+Then turn on vnc using sudo raspi-config>interface options>vnc
 **FOR KALI LINUX**
 
 I wanted to install kali linux on raspberry pi to work on the NAND memory forensics project.
