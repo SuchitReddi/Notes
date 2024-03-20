@@ -140,6 +140,12 @@ iframe {
     height: 445px;
 }
 
+#rfid_sec{
+    width: 100%;
+    height: 500px;
+}
+
+
 .white-links a:link {
     color: white;
 }
