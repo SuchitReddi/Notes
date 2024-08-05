@@ -1,0 +1,18 @@
+Installed from fitgirl repacks.
+
+Faced issue of saves not... well, saving.
+
+To make it work, edit CPY.ini (Batman - Arkham Knight>Binaries>Win64>CPY.ini)
+There in the save path, change it to this (C:\Games\Batman - Arkham Knight\Binaries\Win64)
+Be careful to change the path to where you installed your game.
+
+Then go to the properties of Batman - Arkham Knight folder and change these settings.
+
+Tick the boxes:
+Folder is ready for archiving
+Allow files in this folder to have contents indexed in addition to file properties
+
+Untick the boxes:
+Compress contents to save disk space
+
+Now this game started saving properly.

@@ -56,3 +56,7 @@ You can use "https://crontab.guru/" to know more abot the timing of crontab.
 
 */1 * * * * sudo python3 /home/sherl0ck/env/logtool/log-reader.py
 
+If you want to know about a particular program or command:
+whatis - A short single line description of what the command does.
+man - This provides a complete manual of that progam.
+apropos - Searches the manual page descriptions for a specified string. (apropos -a password change)
