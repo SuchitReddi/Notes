@@ -5,11 +5,21 @@ Download and install Raspberry Pi Imager tool for flashing the OS images. You wi
 
 2) Flashing OS
 Flash os onto the sd card using raspberry pi imager tool. Enable ssh from advanced options (Press ctrl+shift+x in the imager).
+You can add a file with name "ssh" and no extension in the boot folder of sd card to enable ssh.
 Set the username and password to pi beforehand, connect to wifi if possible.
 
 3) Enabling vnc
 Once you are booted up, if you connected it to your wifi beforehand, obtain IP and login via ssh.
 Then turn on vnc using sudo raspi-config>interface options>vnc
+
+Make sure to install ufw (ubuntu firewall) and enable ports 22/tcp and 5900/tcp. 
+
+To ssh into your windows pc:
+[System.Security.Principal.WindowsIdentity]::GetCurrent().Name will give you the <computername>. Username is the <username> of your non admin account. 
+Then to connect, you use the below command
+ssh <computername>\\<username>@192.168.0.13
+It should look something like this "sudo ssh MSI-I512400\\john_weak@192.168.0.13"
+
 **FOR KALI LINUX**
 
 I wanted to install kali linux on raspberry pi to work on the NAND memory forensics project.
@@ -53,5 +63,6 @@ This was solved by going to the terminal and opening raspi-config
 Select advanced, and go to resolution. There select `DMT Mode 85 1280x720 60Hz 16:9`
 Now there is a VNC screen showing the virtual connection, but something is still wrong and you can't type anything
 in the terminal. The background image goes black after a few seconds. This issue is yet to be fixed.
+
 
 It will be better if I can eliminate the need for ethernet cable and directly connect to the pi from some Wi-Fi.
