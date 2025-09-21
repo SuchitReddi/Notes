@@ -31,14 +31,14 @@
         This python honeypot is set up on my raspberry pi 4 using opencanary. A virtual environment should be
         created before installation of opencanary.<br>
         <code>
-            virtualenv env<br>
+            virtualenv env/<br>
             . env/bin/activate<br>
         </code>
         Typing `deactivate` will bring you out of the venv.<br>
 
         This will create a python environment where you can install opencanary. But first install prerequisites.<br>
         <code>
-            sudo apt-get install git python-virtualenv python-pip python-dev libssl-dev libffi-dev<br>
+            sudo apt-get install git python3-virtualenv python3-pip python3-dev libssl-dev libffi-dev<br>
             pip3 install opencanary<br>
             pip3 install scapy pcapy<br>
         </code>
@@ -112,5 +112,6 @@
     <button><a href="..">Back</a></button><br>
 
 </body>
+
 
 </html>
