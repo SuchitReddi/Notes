@@ -18,7 +18,9 @@ To ssh into your windows pc:
 [System.Security.Principal.WindowsIdentity]::GetCurrent().Name will give you the <computername>. Username is the <username> of your non admin account. 
 Then to connect, you use the below command
 ssh <computername>\\<username>@192.168.0.13
-It should look something like this "sudo ssh MSI-I512400\\john_weak@192.168.0.13"
+It should look something like this "sudo ssh MSI-I512400-RTX\\john_weak@192.168.0.13"
+After logging in, you can simply go to the file explorer/go/connect to server and give the details or simply paste this in search bar:
+sftp://MSI-I512400-RTX\\john_weak@192.168.0.13/
 
 **FOR KALI LINUX**
 
@@ -66,3 +68,4 @@ in the terminal. The background image goes black after a few seconds. This issue
 
 
 It will be better if I can eliminate the need for ethernet cable and directly connect to the pi from some Wi-Fi.
+
