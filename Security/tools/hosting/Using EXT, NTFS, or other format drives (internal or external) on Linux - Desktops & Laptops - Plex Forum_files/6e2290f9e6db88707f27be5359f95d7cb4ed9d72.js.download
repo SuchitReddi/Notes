@@ -1,0 +1,38 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+"require"in window&&require("discourse/lib/theme-settings-store").registerSettings(3,{theme_uploads:{"apple-touch-icon-144x144":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/8/3/833e5cd753c8645af15fef9118673a310d7e286d.png","favicon-32x32":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/4/6/469f411093d17974bcf7fbd994866315f94f6cb1.png","plexeina-bold-webfont":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/3/5/3513e39aaf7bbbba04ce1654f886b1c4e1fa2e60.woff","plexeina-bold-webfont2":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/3/a/3a7e3cf9b79891912ca03b4d41b6eb5a150d74f6.woff2","plexeina-regular-webfont":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/1/6/16e019d4b3d5d8a6d42e5dcb4ca1d84bf4031a2c.woff","plexeina-regular-webfont2":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/f/9/f9c224f1b5ad0afa6bdea95f47c64ae0f77eee68.woff2","plexeina-semibold-webfont":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/f/1/f1454c0e4e4af0682503c5807b69a927011bbddd.woff","plexeina-semibold-webfont2":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/b/d/bd245c946fe1e0be8fa228d6ace5c6a96a244da5.woff2","plex-icon":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/2/a/2acb9765406f63293d357b4ec509ec39aa28f2ad.png","plex-logo":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/7/4/74185952dcc4aa3681d1b98c1ff5d8dac72ce239.png","plex-logo-digst":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/0/a/0a0363d2e697590e5c80dfcde2dd4db5ef8d9630.png","plex-logo-rev":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/1/1/117e5a2e80ac07206dbae2d474f6e62571a4344b.png","plex-pass-flare":"https://web.archive.org/web/20250624143314/https://global.discourse-cdn.com/plex/original/3X/6/3/63b2fc5b4592d083182e665c9484dd8f482d27e3.png"}}),jQuery(document).ready(function(){$("#main").on("click",".widget-button.share",function(){var e=$(this).attr("data-share-url"),a=e.indexOf("?")
+a>0&&(e=e.substring(0,a)),$(this).attr("data-share-url",e)})})
+
+//# sourceMappingURL=6e2290f9e6db88707f27be5359f95d7cb4ed9d72.map?__ws=forums.plex.tv
+
+
+}
+/*
+     FILE ARCHIVED ON 14:33:14 Jun 24, 2025 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:16:05 Sep 26, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.714
+  exclusion.robots: 0.024
+  exclusion.robots.policy: 0.01
+  esindex: 0.013
+  cdx.remote: 87.063
+  LoadShardBlock: 206.707 (3)
+  PetaboxLoader3.datanode: 215.643 (4)
+  load_resource: 13.0
+*/

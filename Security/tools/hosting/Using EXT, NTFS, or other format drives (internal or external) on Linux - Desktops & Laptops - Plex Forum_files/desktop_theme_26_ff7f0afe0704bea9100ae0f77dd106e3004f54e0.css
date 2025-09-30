@@ -1,0 +1,23 @@
+@media screen and (min-width: 767px){.custom-sidebar.sidebar-left .contents>.topic-list{grid-template-columns:20% 78%;grid-template-areas:"sidebar head" "sidebar body"}}@media screen and (min-width: 767px)and (max-width: 900px){.custom-sidebar.sidebar-left .contents>.topic-list{grid-template-columns:25% 73%}}@media screen and (min-width: 767px){.custom-sidebar.sidebar-right .contents>.topic-list{grid-template-columns:78% 20%;grid-template-areas:"head sidebar" "body sidebar"}}@media screen and (min-width: 767px)and (max-width: 900px){.custom-sidebar.sidebar-right .contents>.topic-list{grid-template-columns:73% 25%}}@media screen and (min-width: 767px){.custom-sidebar .contents>.topic-list{display:grid;grid-column-gap:2%;align-items:start;grid-template-rows:50px auto}.custom-sidebar .contents>.topic-list .topic-list-header{grid-area:head;display:table;align-self:end;width:100%}.custom-sidebar .contents>.topic-list>.category-sidebar{overflow:hidden;display:flex;margin-top:15px;grid-area:sidebar;order:3;padding:0;position:relative;max-height:calc(100dvh - var(--header-offset) - 2em)}.custom-sidebar .contents>.topic-list>.category-sidebar .cooked .loading-container{width:100%}.custom-sidebar .contents>.topic-list>.category-sidebar .cooked img,.custom-sidebar .contents>.topic-list>.category-sidebar .cooked video,.custom-sidebar .contents>.topic-list>.category-sidebar .cooked iframe{width:100%;height:auto}.custom-sidebar .contents>.topic-list>.category-sidebar .cooked img.emoji{width:20px}.custom-sidebar .contents>.topic-list>.category-sidebar .cooked ul,.custom-sidebar .contents>.topic-list>.category-sidebar .cooked ol{padding-left:30px}.custom-sidebar .contents>.topic-list>.category-sidebar .cooked>*:first-child{margin-top:0 !important}.custom-sidebar .contents>.topic-list .sticky-sidebar{width:100%}.custom-sidebar .contents>.topic-list .topic-list-body{grid-area:body;display:table;width:100%}}.custom-sidebar #list-area .show-more.has-topics .alert{box-sizing:border-box;width:78%}@media screen and (max-width: 900px){.custom-sidebar #list-area .show-more.has-topics .alert{width:73%}}.custom-sidebar.sidebar-left #list-area .show-more.has-topics{display:flex;justify-content:end}
+/*# sourceMappingURL=desktop_theme_26_ff7f0afe0704bea9100ae0f77dd106e3004f54e0.css.map?__ws=forums.plex.tv */
+
+/*
+     FILE ARCHIVED ON 14:33:15 Jun 24, 2025 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:16:05 Sep 26, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.692
+  exclusion.robots: 0.025
+  exclusion.robots.policy: 0.011
+  esindex: 0.015
+  cdx.remote: 8.377
+  LoadShardBlock: 256.364 (3)
+  PetaboxLoader3.datanode: 189.366 (4)
+  PetaboxLoader3.resolve: 233.959 (2)
+  load_resource: 171.865
+*/

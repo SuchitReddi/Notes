@@ -1,0 +1,92 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+(function(){
+
+    var frame = document.createElement('iframe');
+    frame.src = 'https://web.archive.org/web/20250624095616/https://x2m8rwtfjg4j.statuspage.io/embed/frame';
+    frame.style.position = 'fixed';
+    frame.style.border = 'none';
+    frame.style.boxShadow = '0 20px 32px -8px rgba(9,20,66,0.25)';
+    frame.style.zIndex = '9999';
+    frame.style.transition = 'left 1s ease, bottom 1s ease, right 1s ease';
+
+    frame.title = 'Plex Status';
+    frame.ariaHidden = true;
+
+    var mobile;
+    if (mobile = screen.width < 450) {
+      frame.src += '?mobile=true';
+      frame.style.height = '20vh';
+      frame.style.width = '100vw';
+      frame.style.left = '-9999px';
+      frame.style.bottom = '-9999px';
+      frame.style.transition = 'bottom 1s ease';
+    } else {
+      frame.style.height = '115px';
+      frame.style.width = '320px';
+      frame.style.left = 'auto';
+      frame.style.right = '-9999px';
+      frame.style.bottom = '60px';
+    }
+
+    document.body.appendChild(frame);
+
+    var actions = {
+      showFrame: function() {
+        frame.tabIndex = '0';
+        if (mobile) {
+          frame.style.left = '0';
+          frame.style.bottom = '0';
+        }
+        else {
+          frame.style.left = 'auto';
+          frame.style.right = '60px'
+        }
+      },
+      dismissFrame: function(){
+        frame.style.left = '-9999px';
+        frame.tabIndex = '-1';
+      }
+    }
+
+    window.addEventListener('message', function(event){
+      if (event.data.action && actions.hasOwnProperty(event.data.action)) {
+        actions[event.data.action](event.data);
+      }
+    }, false);
+
+    window.statusEmbedTest = actions.showFrame;
+})();
+
+
+}
+/*
+     FILE ARCHIVED ON 09:56:16 Jun 24, 2025 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:16:05 Sep 26, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.572
+  exclusion.robots: 0.02
+  exclusion.robots.policy: 0.007
+  esindex: 0.011
+  cdx.remote: 12.619
+  LoadShardBlock: 94.475 (3)
+  PetaboxLoader3.datanode: 114.244 (4)
+  PetaboxLoader3.resolve: 58.853 (2)
+  load_resource: 115.701
+*/

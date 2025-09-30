@@ -1,0 +1,40 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+(function(){const a=document.getElementById("data-ga-universal-analytics")
+window.dataLayer=window.dataLayer||[],window.gtag=function(){window.dataLayer.push(arguments)},window.gtag("js",new Date)
+let n={}
+if(a.dataset.autoLinkDomains.length){n={linker:{accept_incoming:!0,domains:a.dataset.autoLinkDomains.split("|")}}}window.gtag("config",a.dataset.trackingCode,{send_page_view:!1,autoLinkConfig:n})})()
+
+//# sourceMappingURL=google-universal-analytics-v4-750ec652.map
+
+}
+/*
+     FILE ARCHIVED ON 08:06:51 Jun 25, 2025 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:16:06 Sep 26, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.724
+  exclusion.robots: 0.024
+  exclusion.robots.policy: 0.01
+  esindex: 0.015
+  cdx.remote: 59.842
+  LoadShardBlock: 404.659 (3)
+  PetaboxLoader3.datanode: 308.04 (4)
+  load_resource: 321.96
+  PetaboxLoader3.resolve: 258.429
+*/

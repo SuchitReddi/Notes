@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<!-- saved from url=(0142)https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544 -->
+<html lang="en" data-darkreader-mode="dynamic" data-darkreader-scheme="dark" data-darkreader-proxy-injected="true" style="--wm-toolbar-height: 1px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">@layer {
+html {
+    background-color: var(--darkreader-background-ffffff, #181a1b) !important;
+}
+html {
+    color-scheme: dark !important;
+}
+iframe {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: var(--darkreader-background-ffffff, #181a1b);
+}
+html, body {
+    border-color: var(--darkreader-border-4c4c4c, #736b5e);
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+a {
+    color: var(--darkreader-text-0040ff, #3391ff);
+}
+table {
+    border-color: var(--darkreader-border-808080, #545b5e);
+}
+mark {
+    color: var(--darkreader-text-000000, #e8e6e3);
+}
+::placeholder {
+    color: var(--darkreader-text-a9a9a9, #b2aba1);
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: var(--darkreader-background-faffbd, #404400) !important;
+    color: var(--darkreader-text-000000, #e8e6e3) !important;
+}
+::selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+::-moz-selection {
+    background-color: var(--darkreader-background-0060d4, #004daa) !important;
+    color: var(--darkreader-text-ffffff, #e8e6e3) !important;
+}
+}</style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, img.Wirisformula, a[data-testid="headerMediumLogo"]>svg, .d2l-navigation-link-image-container, .d2l-iframe-loading-container, .sparkline-canvas, .sparkline-mouse-highlight, .search-toolbar-logo, .ia-wordmark {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}
+[data-darkreader-inline-bg] {
+  background: var(--darkreader-inline-bg) !important;
+}
+[data-darkreader-inline-border-short] {
+  border: var(--darkreader-inline-border-short) !important;
+}
+[data-darkreader-inline-border-bottom-short] {
+  border-bottom: var(--darkreader-inline-border-bottom-short) !important;
+}
+[data-darkreader-inline-border-left-short] {
+  border-left: var(--darkreader-inline-border-left-short) !important;
+}
+[data-darkreader-inline-border-right-short] {
+  border-right: var(--darkreader-inline-border-right-short) !important;
+}
+[data-darkreader-inline-border-top-short] {
+  border-top: var(--darkreader-inline-border-top-short) !important;
+}
+[data-darkreader-inline-invert] {
+    filter: invert(100%) hue-rotate(180deg);
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: var(--darkreader-background-ffffff, #181a1b);
+   --darkreader-neutral-text: var(--darkreader-text-000000, #e8e6e3);
+   --darkreader-selection-background: var(--darkreader-background-0060d4, #004daa);
+   --darkreader-selection-text: var(--darkreader-text-ffffff, #e8e6e3);
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><script src="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/athena.js.download" type="text/javascript"></script><meta name="darkreader" content="7a35586875054621901f3a7a50b64ab9"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: var(--darkreader-background-ffd76e, #684b00) !important;
+    border-color: var(--darkreader-background-c59d00, #9e7e00) !important;
+    color: var(--darkreader-text-302505, #d7d4cf) !important;
+}
+#vimvixen-console-frame {
+    color-scheme: light !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: var(--darkreader-background-add8e6, #1b4958) !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: var(--darkreader-background-cfecf5, #0f3a47) !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: var(--darkreader-background-f5f5f5, #1e2021) !important;
+}
+.tou-uknfeu {
+    background-color: var(--darkreader-background-faedda, #432c09) !important;
+}
+.tou-6i3zyv {
+    background-color: var(--darkreader-background-85c3d8, #245d70) !important;
+}
+div.mermaid-viewer-control-panel .btn {
+    background-color: var(--darkreader-neutral-background);
+    fill: var(--darkreader-neutral-text);
+}
+svg g rect.er {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.entityBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxOdd {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.er.attributeBoxEven {
+    fill: var(--darkreader-selection-background);
+    fill-opacity: 0.8 !important;
+}
+svg rect.er.relationshipLabelBox {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g g.nodes rect,
+svg g g.nodes polygon {
+    fill: var(--darkreader-neutral-background) !important;
+}
+svg g rect.task {
+    fill: var(--darkreader-selection-background) !important;
+}
+svg line.messageLine0,
+svg line.messageLine1 {
+    stroke: var(--darkreader-neutral-text) !important;
+}
+div.mermaid .actor {
+    fill: var(--darkreader-neutral-background) !important;
+}
+mitid-authenticators-code-app > .code-app-container {
+    background-color: white !important;
+    padding-top: 1rem;
+}
+iframe#unpaywall[src$="unpaywall.html"] {
+    color-scheme: light !important;
+}
+select {
+    --darkreader-bg--form-control-background-color: rgba(22, 22, 22, 0) !important;
+}
+select * {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+body#tumblr {
+    --darkreader-bg--secondary-accent: 31, 32, 34 !important;
+    --darkreader-bg--white: 23, 23, 23 !important;
+    --darkreader-text--black: 228, 224, 218 !important;
+}
+:host {
+    --d2l-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-button-icon-background-color-hover: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-color-ferrite: var(--darkreader-neutral-text) !important;
+    --d2l-color-sylvite: var(--darkreader-bg--d2l-color-sylvite) !important;
+    --d2l-dropdown-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-dropdown-border-color: var(--darkreader-border--d2l-color-mica) !important;
+    --d2l-input-backgroud-color: var(--darkreader-neutral-background) !important;
+    --d2l-menu-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+    --d2l-tooltip-background-color: var(--darkreader-neutral-background) !important;
+    --d2l-tooltip-border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+:host([_floating]) .d2l-floating-buttons-container {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-top-color: var(--darkreader-border--d2l-color-mica) !important;
+    opacity: 0.88 !important;
+}
+d2l-card {
+    background: var(--darkreader-neutral-background) !important;
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+d2l-dropdown-content > div,
+d2l-menu-item {
+    background-color: var(--darkreader-neutral-background) !important;
+    border-radius: 10px !important;
+}
+d2l-empty-state-simple {
+    border-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-button-filter > ul > li > a.vui-button {
+    border-color: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-label-text:has(.d2l-button-subtle-content):hover,
+.d2l-label-text:has(.d2l-button-subtle-content):focus,
+.d2l-label-text:has(.d2l-button-subtle-content):active {
+    background-color: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-navigation-centerer {
+    color: inherit !important;
+}
+.d2l-tabs-layout {
+    border-color: var(--darkreader-border--d2l-color-gypsum) !important;
+}
+.d2l-input,
+.d2l-calendar-date,
+.d2l-htmleditor-container {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-collapsible-panel {
+    border: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+    border-radius: 0.4rem !important;
+}
+.d2l-collapsible-panel-divider {
+    border-bottom: 1px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-w2d-flex {
+    border-bottom: 2px solid var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-collapsible-panel scrolled,
+.d2l-collapsible-panel-header,
+.d2l-w2d-collection-fixed {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.d2l-loading-spinner-bg {
+    fill: var(--darkreader-bg--d2l-color-gypsum) !important;
+}
+.d2l-loading-spinner-bg-stroke {
+    stroke: var(--darkreader-border--d2l-color-mica) !important;
+}
+.d2l-loading-spinner-wrapper svg path,
+.d2l-loading-spinner-wrapper svg circle {
+    fill: var(--darkreader-neutral-background) !important;
+}
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+.measure {
+    z-index: 0 !important;
+}</style>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app215.us.archive.org';v.server_ms=700;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/bundle-playback.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/wombat.js.download" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/ruffle.js.download"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544","20250624185226","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1750791146");
+</script>
+<link rel="stylesheet" type="text/css" href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/banner-styles.css"><style class="darkreader darkreader--cors" media="screen">:root {
+  --wm-toolbar-height: 65px;
+}
+#wm-ipp-base {
+  height:65px;
+  padding:0;
+  margin:0;
+  border:none;
+  background:none transparent;
+}
+#wm-ipp {
+  z-index: 2147483647;
+}
+#wm-ipp, #wm-ipp * {
+  font-family:Lucida Grande, Helvetica, Arial, sans-serif;
+  font-size:12px;
+  line-height:1.2;
+  letter-spacing:0;
+  width:auto;
+  height:auto;
+  max-width:none;
+  max-height:none;
+  min-width:0 !important;
+  min-height:0;
+  outline:none;
+  float:none;
+  text-align:left;
+  border:none;
+  color: #000;
+  text-indent: 0;
+  position: initial;
+  background: none;
+}
+#wm-ipp div, #wm-ipp canvas {
+  display: block;
+}
+#wm-ipp div, #wm-ipp tr, #wm-ipp td, #wm-ipp a, #wm-ipp form {
+  padding:0;
+  margin:0;
+  border:none;
+  border-radius:0;
+  background-color:transparent;
+  background-image:none;
+  
+  height:auto;
+}
+#wm-ipp table {
+  border:none;
+  border-collapse:collapse;
+  margin:0;
+  padding:0;
+  width:auto;
+  font-size:inherit;
+}
+#wm-ipp form input {
+  padding:1px !important;
+  height:auto;
+  display:inline;
+  margin:0;
+  color: #000;
+  background: none #fff;
+  border: 1px solid #666;
+}
+#wm-ipp form input[type=submit] {
+  padding:0 8px !important;
+  margin:1px 0 1px 5px !important;
+  width:auto !important;
+  border: 1px solid #000 !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+#wm-ipp form input[type=submit]:hover {
+  background: #eee !important;
+  cursor: pointer !important;
+}
+#wm-ipp form input[type=submit]:active {
+  transform: translateY(1px);
+}
+#wm-ipp a {
+  display: inline;
+}    
+#wm-ipp a:hover{
+  text-decoration:underline;
+}
+#wm-ipp a.wm-btn:hover {
+  text-decoration:none;
+  color:#ff0 !important;
+}
+#wm-ipp a.wm-btn:hover span {
+  color:#ff0 !important;
+}
+#wm-ipp #wm-ipp-inside {
+  margin: 0 6px;
+  border:5px solid #000;
+  border-top:none;
+  background-color:rgba(255,255,255,0.9);
+  -moz-box-shadow:1px 1px 4px #333;
+  -webkit-box-shadow:1px 1px 4px #333;
+  box-shadow:1px 1px 4px #333;
+  border-radius:0 0 8px 8px;
+}
+
+#wm-ipp #wm-logo {
+  padding:0 10px;
+  vertical-align:middle;
+  min-width:100px;
+  flex: 0 0 100px;
+}
+#wm-ipp .c {
+  padding-left: 4px;
+}
+#wm-ipp .c .u {
+    margin-top: 4px !important;
+}
+#wm-ipp .n {
+  padding:0 0 0 5px !important;
+  vertical-align: bottom;
+}
+#wm-ipp .n a {
+  text-decoration:none;
+  color:#33f;
+  font-weight:bold;
+}
+#wm-ipp .n .b {
+  padding:0 6px 0 0 !important;
+  text-align:right !important;
+  overflow:visible;
+  white-space:nowrap;
+  color:#99a;
+  vertical-align:middle;
+}
+#wm-ipp .n .y .b {
+  padding:0 6px 2px 0 !important;
+}
+#wm-ipp .n .c {
+  background:#000;
+  color:#ff0;
+  font-weight:bold;
+  padding:0 !important;
+  text-align:center;
+}
+#wm-ipp.hi .n td.c {
+  color:#ec008c;
+}
+#wm-ipp .n td.f {
+  padding:0 0 0 6px !important;
+  text-align:left !important;
+  overflow:visible;
+  white-space:nowrap;
+  color:#99a;
+  vertical-align:middle;
+}
+#wm-ipp .n tr.m td {
+  text-transform:uppercase;
+  white-space:nowrap;
+  padding:2px 0;
+}
+#wm-ipp .c .s {
+  padding:0 5px 0 0 !important;
+  vertical-align:bottom;
+}
+#wm-ipp #wm-nav-captures {
+  white-space: nowrap;
+}
+#wm-ipp .c .s a.t {
+  color:#33f;
+  font-weight:bold;
+  line-height: 1.8;
+}
+#wm-ipp .c .s div.r {
+  color: #666;
+  font-size:9px;
+  white-space:nowrap;
+}
+#wm-ipp .c .k {
+  padding-bottom:1px;
+}
+#wm-ipp .c .s {
+  padding:0 5px 2px 0 !important;
+}
+#wm-ipp td#displayMonthEl {
+  padding: 2px 0 !important;
+}
+#wm-ipp td#displayYearEl {
+  padding: 0 0 2px 0 !important;
+}
+
+div#wm-ipp-sparkline {
+  position:relative;
+  white-space:nowrap;
+  background-color:#fff;
+  cursor:pointer;
+  line-height:0.9;
+}
+#sparklineImgId, #wm-sparkline-canvas {
+  position:relative;
+  z-index:9012;
+  max-width:none;
+}
+#wm-ipp-sparkline div.yt {
+  position:absolute;
+  z-index:9010 !important;
+  background-color:#ff0 !important;
+  top: 0;
+}
+#wm-ipp-sparkline div.mt {
+  position:absolute;
+  z-index:9013 !important;
+  background-color:#ec008c !important;
+  top: 0;
+}  
+#wm-ipp .r {
+    margin-left: 4px;
+}
+#wm-ipp .r a {
+  color:#33f;
+  border:none;
+  position:relative;
+  background-color:transparent;
+  background-repeat:no-repeat !important;
+  background-position:100% 100% !important;
+  text-decoration: none;
+}
+#wm-ipp #wm-capinfo {
+  
+  border-radius: 0 0 4px 4px;
+}
+#wm-ipp #wm-capinfo .c-logo {
+  display:block;
+  float:left;
+  margin-right:3px;
+  width:90px;
+  min-height:90px;
+  max-height: 290px;
+  border-radius:45px;
+  overflow:hidden;
+  background-position:50%;
+  background-size:auto 90px;
+  box-shadow: 0 0 2px 2px rgba(208,208,208,128) inset;
+}
+#wm-ipp #wm-capinfo .c-logo span {
+  display:inline-block;
+}
+#wm-ipp #wm-capinfo .c-logo img {
+  height:90px;
+  position:relative;
+  left:-50%;
+}
+#wm-ipp #wm-capinfo .wm-title {
+  font-size:130%;
+}
+#wm-ipp #wm-capinfo a.wm-selector {
+  display:inline-block;
+  color: #aaa;
+  text-decoration:none !important;
+  padding: 2px 8px;
+}
+#wm-ipp #wm-capinfo a.wm-selector.selected {
+  background-color:#666;
+}
+#wm-ipp #wm-capinfo a.wm-selector:hover {
+  color: #fff;
+}
+#wm-ipp #wm-capinfo.notice-only #wm-capinfo-collected-by,
+#wm-ipp #wm-capinfo.notice-only #wm-capinfo-timestamps {
+    display: none;
+}
+#wm-ipp #wm-capinfo #wm-capinfo-notice .wm-capinfo-content {
+    background-color:#ff0;
+    padding:5px;
+    font-size:14px;
+    text-align:center;
+}
+#wm-ipp #wm-capinfo #wm-capinfo-notice .wm-capinfo-content * {
+    font-size:14px;
+    text-align:center;
+}
+#wm-ipp #wm-expand {
+  right: 1px;
+  bottom: -1px;
+  color: #ffffff;
+  background-color: #666 !important;
+  padding:0 5px 0 3px !important;
+  border-radius: 3px 3px 0 0 !important;
+}
+#wm-ipp #wm-expand span {
+  color: #ffffff;
+}
+#wm-ipp #wm-expand #wm-expand-icon {
+  display: inline-block;
+  transition: transform 0.5s;
+  transform-origin: 50% 45%;
+}
+#wm-ipp #wm-expand.wm-open #wm-expand-icon {
+  transform: rotate(180deg);
+}
+#wm-ipp #wmtb {
+  text-align:right;
+}
+#wm-ipp #wmtb #wmtbURL {
+  width: calc(100% - 45px);
+}
+#wm-ipp #wm-graph-anchor {
+  border-right:1px solid #ccc;
+}
+
+html.wb-highlight {
+  box-shadow: inset 0 0 0 3px #a50e3a !important;
+}    
+.wb-highlight {
+  outline: 3px solid #a50e3a !important;
+}
+#wm-ipp-print {
+  display:none !important;
+}
+@media print {
+#wm-ipp-base {
+  display:none !important;
+}
+#wm-ipp-print {
+  display:block !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+}
+@media (max-width:414px) {
+    #wm-ipp .xxs {
+	display:none !important;
+    }
+}
+@media (min-width:1055px) {
+#wm-ipp #wm-graph-anchor {
+  display:block !important;
+}
+}
+@media (max-width:1054px) {
+#wm-ipp #wm-graph-anchor {
+  display:none !important;
+}
+}
+@media (max-width:1163px) {
+#wm-logo {
+    display:none !important;
+}
+}
+
+#wm-btns {
+    white-space: nowrap;
+    margin-top: -2px;
+}
+
+#wm-btns #wm-save-snapshot-open {
+  margin-right: 7px;
+  top: -6px;
+}
+
+#wm-btns #wm-sign-in {
+  box-sizing: content-box;
+  display: none;
+  margin-right: 7px;
+  top: -8px;
+
+  
+  border: 2px #000 solid;
+  border-radius: 14px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  width: 11px;
+  height: 11px;
+}
+
+#wm-btns #wm-sign-in>.iconochive-person {
+  font-size: 12.5px;
+}
+
+#wm-save-snapshot-open > .iconochive-web {
+  color:#000;
+  font-size:160%;
+}
+
+#wm-ipp #wm-share {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+#wm-share > #wm-screenshot {
+  display: inline-block;
+  margin-right: 3px;
+  visibility: hidden;
+}
+
+#wm-screenshot > .iconochive-image {
+  color:#000;
+  font-size:160%;
+}
+
+#wm-share > #wm-video {
+  display: inline-block;
+  margin-right: 3px;
+  visibility: hidden;
+}
+
+#wm-video > .iconochive-movies {
+  color: #000;
+  display: inline-block;
+  font-size: 150%;
+  margin-bottom: 2px;
+}
+
+#wm-btns #wm-save-snapshot-in-progress {
+  display: none;
+  font-size:160%;
+  opacity: 0.5;
+  position: relative;
+  margin-right: 7px;
+  top: -5px;
+}
+
+#wm-btns #wm-save-snapshot-success {
+  display: none;
+  color: green;
+  position: relative;
+  top: -7px;
+}
+
+#wm-btns #wm-save-snapshot-fail {
+  display: none;
+  color: red;
+  position: relative;
+  top: -7px;
+}
+
+.wm-icon-screen-shot {
+  background: url('https://web-static.archive.org/_static/images/web-screenshot.svg') no-repeat !important;
+  background-size: contain !important;
+  width: 22px !important;
+  height: 19px !important;
+
+  display: inline-block;
+}
+#donato {
+    
+    
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #999 !important;
+}
+body.wm-modal {
+    height: auto !important;
+    overflow: hidden !important;
+}
+#donato #donato-base {
+    width: 100%;
+    height: 100%;
+    
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 2147483639;
+}
+body.wm-modal #donato #donato-base {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2147483640;
+}
+
+.wb-autocomplete-suggestions {
+    font-family: Lucida Grande, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    text-align: left;
+    cursor: default;
+    border: 1px solid #ccc;
+    border-top: 0;
+    background: #fff;
+    box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute;
+    display: none;
+    z-index: 2147483647;
+    max-height: 254px;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+.wb-autocomplete-suggestion {
+    position: relative;
+    padding: 0 .6em;
+    line-height: 23px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.02em;
+    color: #333;
+}
+.wb-autocomplete-suggestion b {
+    font-weight: bold;
+}
+.wb-autocomplete-suggestion.selected {
+    background: #f0f0f0;
+}</style><style class="darkreader darkreader--sync" media="screen"></style>
+<link rel="stylesheet" type="text/css" href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/iconochive.css"><style class="darkreader darkreader--cors" media="screen">[class^="iconochive-"],[class*=" iconochive-"]{font-family:'Iconochive-Regular'!important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.iconochive-Uplevel:before{content:"\21b5"}
+.iconochive-exit:before{content:"\1f6a3"}
+.iconochive-beta:before{content:"\3b2"}
+.iconochive-logo:before{content:"\1f3db"}
+.iconochive-audio:before{content:"\1f568"}
+.iconochive-movies:before{content:"\1f39e"}
+.iconochive-software:before{content:"\1f4be"}
+.iconochive-texts:before{content:"\1f56e"}
+.iconochive-etree:before{content:"\1f3a4"}
+.iconochive-image:before{content:"\1f5bc"}
+.iconochive-web:before{content:"\1f5d4"}
+.iconochive-collection:before{content:"\2211"}
+.iconochive-folder:before{content:"\1f4c2"}
+.iconochive-data:before{content:"\1f5c3"}
+.iconochive-tv:before{content:"\1f4fa"}
+.iconochive-article:before{content:"\1f5cf"}
+.iconochive-question:before{content:"\2370"}
+.iconochive-question-dark:before{content:"\3f"}
+.iconochive-info:before{content:"\69"}
+.iconochive-info-small:before{content:"\24d8"}
+.iconochive-comment:before{content:"\1f5e9"}
+.iconochive-comments:before{content:"\1f5ea"}
+.iconochive-person:before{content:"\1f464"}
+.iconochive-people:before{content:"\1f465"}
+.iconochive-eye:before{content:"\1f441"}
+.iconochive-rss:before{content:"\221e"}
+.iconochive-time:before{content:"\1f551"}
+.iconochive-quote:before{content:"\275d"}
+.iconochive-disc:before{content:"\1f4bf"}
+.iconochive-tv-commercial:before{content:"\1f4b0"}
+.iconochive-search:before{content:"\1f50d"}
+.iconochive-search-star:before{content:"\273d"}
+.iconochive-tiles:before{content:"\229e"}
+.iconochive-list:before{content:"\21f6"}
+.iconochive-list-bulleted:before{content:"\2317"}
+.iconochive-latest:before{content:"\2208"}
+.iconochive-left:before{content:"\2c2"}
+.iconochive-right:before{content:"\2c3"}
+.iconochive-left-solid:before{content:"\25c2"}
+.iconochive-right-solid:before{content:"\25b8"}
+.iconochive-up-solid:before{content:"\25b4"}
+.iconochive-down-solid:before{content:"\25be"}
+.iconochive-dot:before{content:"\23e4"}
+.iconochive-dots:before{content:"\25a6"}
+.iconochive-columns:before{content:"\25af"}
+.iconochive-sort:before{content:"\21d5"}
+.iconochive-atoz:before{content:"\1f524"}
+.iconochive-ztoa:before{content:"\1f525"}
+.iconochive-upload:before{content:"\1f4e4"}
+.iconochive-download:before{content:"\1f4e5"}
+.iconochive-favorite:before{content:"\2605"}
+.iconochive-heart:before{content:"\2665"}
+.iconochive-play:before{content:"\25b6"}
+.iconochive-play-framed:before{content:"\1f3ac"}
+.iconochive-fullscreen:before{content:"\26f6"}
+.iconochive-mute:before{content:"\1f507"}
+.iconochive-unmute:before{content:"\1f50a"}
+.iconochive-share:before{content:"\1f381"}
+.iconochive-edit:before{content:"\270e"}
+.iconochive-reedit:before{content:"\2710"}
+.iconochive-gear:before{content:"\2699"}
+.iconochive-remove-circle:before{content:"\274e"}
+.iconochive-plus-circle:before{content:"\1f5d6"}
+.iconochive-minus-circle:before{content:"\1f5d5"}
+.iconochive-x:before{content:"\1f5d9"}
+.iconochive-fork:before{content:"\22d4"}
+.iconochive-trash:before{content:"\1f5d1"}
+.iconochive-warning:before{content:"\26a0"}
+.iconochive-flash:before{content:"\1f5f2"}
+.iconochive-world:before{content:"\1f5fa"}
+.iconochive-lock:before{content:"\1f512"}
+.iconochive-unlock:before{content:"\1f513"}
+.iconochive-twitter:before{content:"\1f426"}
+.iconochive-facebook:before{content:"\66"}
+.iconochive-googleplus:before{content:"\67"}
+.iconochive-reddit:before{content:"\1f47d"}
+.iconochive-tumblr:before{content:"\54"}
+.iconochive-pinterest:before{content:"\1d4df"}
+.iconochive-popcorn:before{content:"\1f4a5"}
+.iconochive-email:before{content:"\1f4e7"}
+.iconochive-embed:before{content:"\1f517"}
+.iconochive-gamepad:before{content:"\1f579"}
+.iconochive-Zoom_In:before{content:"\2b"}
+.iconochive-Zoom_Out:before{content:"\2d"}
+.iconochive-RSS:before{content:"\1f4e8"}
+.iconochive-Light_Bulb:before{content:"\1f4a1"}
+.iconochive-Add:before{content:"\2295"}
+.iconochive-Tab_Activity:before{content:"\2318"}
+.iconochive-Forward:before{content:"\23e9"}
+.iconochive-Backward:before{content:"\23ea"}
+.iconochive-No_Audio:before{content:"\1f508"}
+.iconochive-Pause:before{content:"\23f8"}
+.iconochive-No_Favorite:before{content:"\2606"}
+.iconochive-Unike:before{content:"\2661"}
+.iconochive-Song:before{content:"\266b"}
+.iconochive-No_Flag:before{content:"\2690"}
+.iconochive-Flag:before{content:"\2691"}
+.iconochive-Done:before{content:"\2713"}
+.iconochive-Check:before{content:"\2714"}
+.iconochive-Refresh:before{content:"\27f3"}
+.iconochive-Headphones:before{content:"\1f3a7"}
+.iconochive-Chart:before{content:"\1f4c8"}
+.iconochive-Bookmark:before{content:"\1f4d1"}
+.iconochive-Documents:before{content:"\1f4da"}
+.iconochive-Newspaper:before{content:"\1f4f0"}
+.iconochive-Podcast:before{content:"\1f4f6"}
+.iconochive-Radio:before{content:"\1f4fb"}
+.iconochive-Cassette:before{content:"\1f4fc"}
+.iconochive-Shuffle:before{content:"\1f500"}
+.iconochive-Loop:before{content:"\1f501"}
+.iconochive-Low_Audio:before{content:"\1f509"}
+.iconochive-First:before{content:"\1f396"}
+.iconochive-Invisible:before{content:"\1f576"}
+.iconochive-Computer:before{content:"\1f5b3"}</style><style class="darkreader darkreader--sync" media="screen"></style>
+<!-- End Wayback Rewrite JS Include -->
+
+    
+    <title>Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum</title>
+    <meta name="description" content="This document is of primary interest to anyone who has connected USB drives or has media on other internal drives but user plex can’t access it due to Linux’s default security mechanisms. 
+WARNING:   This procedure will &amp;hellip;">
+    <meta name="generator" content="Discourse 3.5.0.beta7-dev - https://github.com/discourse/discourse version 38cf7cdbeae830cd9263514db246fc2748e6016b">
+<link rel="icon" type="image/png" href="https://web.archive.org/web/20250624185226im_/https://global.discourse-cdn.com/plex/optimized/4X/f/2/a/f2afe54b49581852ea62676be55e1ed062586f78_2_32x32.png">
+<link rel="apple-touch-icon" type="image/png" href="https://web.archive.org/web/20250624185226im_/https://global.discourse-cdn.com/plex/optimized/3X/8/3/833e5cd753c8645af15fef9118673a310d7e286d_2_180x180.png">
+<meta name="theme-color" media="all" content="#181a1b">
+
+<meta name="color-scheme" content="light">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+<link rel="canonical" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/opensearch.xml" title="Plex Forum Search">
+
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/color_definitions_plex-colors_2_3_7afeef85e01d4d37b2fba9fd47d92f51d1dbf3c3.css" media="all" rel="stylesheet" class="light-scheme" data-scheme-id="2"><style class="darkreader darkreader--sync" media="screen"></style>
+
+<link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/common_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="common"><style class="darkreader darkreader--sync" media="screen"></style>
+
+  <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/desktop_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="desktop"><style class="darkreader darkreader--sync" media="screen"></style>
+
+
+
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/automation_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="automation"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/checklist_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="checklist"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-ai_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-ai"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-akismet_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-akismet"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-antivirus_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-antivirus"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-assign_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-assign"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-chat-integration_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-chat-integration"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-data-explorer_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-data-explorer"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-details_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-details"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-lazy-videos_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-lazy-videos"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-local-dates_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-local-dates"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-narrative-bot_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-narrative-bot"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-policy_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-policy"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-presence_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-presence"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-solved_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-solved"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-templates_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-templates"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-topic-voting_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-topic-voting"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-user-notes_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-user-notes"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/footnote_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="footnote"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/hosted-site_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="hosted-site"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/poll_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="poll"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/spoiler-alert_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="spoiler-alert"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-ai_desktop_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-ai_desktop"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/discourse-topic-voting_desktop_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="discourse-topic-voting_desktop"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/poll_desktop_c100fce48d301ff24a35ea1e0e55162b29554222.css" media="all" rel="stylesheet" data-target="poll_desktop"><style class="darkreader darkreader--sync" media="screen"></style>
+
+  <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/common_theme_17_e9888939ac96dc030096e9d146f7f2c7e7b9982f.css" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="17" data-theme-name="component: custom top nav links"><style class="darkreader darkreader--sync" media="screen"></style>
+<link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/common_theme_22_5cc96f80c223ca089e08060ed9dcb9fd131bef65.css" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="22" data-theme-name="discotoc"><style class="darkreader darkreader--sync" media="screen"></style>
+<link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/common_theme_23_d01b264a93b7e4dc267e887c3bea827c102098c0.css" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="23" data-theme-name="hide muted categories"><style class="darkreader darkreader--sync" media="screen"></style>
+<link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/common_theme_24_a5b0b8fb5dad169f0245d743facee184a3c27dd4.css" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="24" data-theme-name="tag styles"><style class="darkreader darkreader--sync" media="screen"></style>
+<link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/common_theme_3_0d20acfa0d4be8c57e2def0f701bb45c0900c4ec.css" media="all" rel="stylesheet" data-target="common_theme" data-theme-id="3" data-theme-name="plex light"><style class="darkreader darkreader--sync" media="screen"></style>
+    <link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/desktop_theme_21_9458910dba925ee15fb2732aef63289d83e69611.css" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="21" data-theme-name="alternative voting category style"><style class="darkreader darkreader--sync" media="screen"></style>
+<link href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/desktop_theme_26_ff7f0afe0704bea9100ae0f77dd106e3004f54e0.css" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="26" data-theme-name="topic list sidebars"><style class="darkreader darkreader--sync" media="screen"></style>
+
+    <!--<link rel="stylesheet" href="https://s3.amazonaws.com/icomoon.io/5482/Plex4Final/style.css?yhue87">-->
+<script defer="" src="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/6e2290f9e6db88707f27be5359f95d7cb4ed9d72.js.download" data-theme-id="3" nonce=""></script>
+
+    <meta id="data-ga-universal-analytics" data-tracking-code="G-818DFNHB65" data-json="{&quot;cookieDomain&quot;:&quot;auto&quot;,&quot;allowLinker&quot;:true}" data-auto-link-domains="www.plex.tv">
+
+  <script async="" src="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/js" nonce=""></script>
+  <script defer="" src="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/google-universal-analytics-v4-ba0fc09a.js.download" data-discourse-entrypoint="google-universal-analytics-v4" nonce=""></script>
+
+
+        <link rel="alternate nofollow" type="application/rss+xml" title="RSS feed of &#39;Using EXT, NTFS, or other format drives (internal or external) on Linux&#39;" href="https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544.rss">
+    <meta property="og:site_name" content="Plex Forum">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://web.archive.org/web/20250624185226im_/https://global.discourse-cdn.com/plex/original/3X/b/f/bf4da7e4a0c1ed2fd6faf0decc0f3846e352c6fa.png">
+<meta property="og:image" content="https://web.archive.org/web/20250624185226im_/https://global.discourse-cdn.com/plex/original/3X/b/f/bf4da7e4a0c1ed2fd6faf0decc0f3846e352c6fa.png">
+<meta property="og:url" content="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544">
+<meta name="twitter:url" content="https://web.archive.org/web/20250624185226im_/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544">
+<meta property="og:title" content="Using EXT, NTFS, or other format drives (internal or external) on Linux">
+<meta name="twitter:title" content="Using EXT, NTFS, or other format drives (internal or external) on Linux">
+<meta property="og:description" content="This document is of primary interest to anyone who has connected USB drives or has media on other internal drives but user plex can’t access it due to Linux’s default security mechanisms.  WARNING:   This procedure will not work for SNAP, Docker or other container mechanisms unless expressly handled within the confines of the container.  This procedure is intended for use with the dpkg package.  We will walk through the steps needed to add these external USB hard drives and  internal hard drives...">
+<meta name="twitter:description" content="This document is of primary interest to anyone who has connected USB drives or has media on other internal drives but user plex can’t access it due to Linux’s default security mechanisms.  WARNING:   This procedure will not work for SNAP, Docker or other container mechanisms unless expressly handled within the confines of the container.  This procedure is intended for use with the dpkg package.  We will walk through the steps needed to add these external USB hard drives and  internal hard drives...">
+<meta property="og:article:section" content="Plex Media Server">
+<meta property="og:article:section:color" content="E0E3E6">
+<meta property="og:article:section" content="Desktops &amp; Laptops">
+<meta property="og:article:section:color" content="E0E3E6">
+<meta property="og:article:tag" content="server-linux-tips">
+<meta name="twitter:label1" value="Reading time">
+<meta name="twitter:data1" value="3 mins 🕑">
+<meta name="twitter:label2" value="Likes">
+<meta name="twitter:data2" value="23 ❤">
+<meta property="article:published_time" content="2017-07-09T19:12:25+00:00">
+<meta property="og:ignore_canonical" content="true">
+
+
+    <script type="application/ld+json">{"@context":"https://web.archive.org/web/20250624185226/http://schema.org","@type":"QAPage","name":"Using EXT, NTFS, or other format drives (internal or external) on Linux","mainEntity":{"@type":"Question","name":"Using EXT, NTFS, or other format drives (internal or external) on Linux","text":"This document is of primary interest to anyone who has connected USB drives or has media on other internal drives but user plex can’t access it due to Linux’s default security mechanisms.\n\nWARNING:   This procedure will not work for SNAP, Docker or other container mechanisms unless expressly handled&hellip;","upvoteCount":23,"answerCount":0,"datePublished":"2017-07-09T19:12:25.000Z","author":{"@type":"Person","name":"ChuckPa","url":"https://web.archive.org/web/20250624185226/https://forums.plex.tv/u/ChuckPa"}}}</script>
+  </head>
+  <body class="crawler "><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 1px;" toolbar-mode="auto"><template shadowrootmode="closed"><div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;" class="">
+<div id="donato" style="position: relative; width: 100%; height: 0px; visibility: hidden;">
+  <div id="donato-base" style="height: 266px;">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20250624185226/https%3A//forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside" style="display: none;">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0"></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="https://web.archive.org/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544" onfocus="this.focus();this.select();" style="flex:1;" autocomplete="off"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20250624185226"><input type="submit" value="Go">
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;"><a class="t" href="https://web.archive.org/web/*/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544" title="See a list of every capture for this URL">34 captures</a><div class="r" title="Timespan for captures of this URL">8 Dec 2019 - 24 Jun 2025</div></div>
+        <div class="k">
+          <a href="https://web.archive.org/web/20250701000000/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="750" height="27" border="0"></canvas>
+            <div class="yt" style="display: none; width: 25px; height: 27px; left: 725px;"></div><div class="mt" style="display: none; width: 2px; height: 27px; left: 738px;"></div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20250328073551/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544" title="28 Mar 2025"><strong>Mar</strong></a></td>
+            <td class="c" id="displayMonthEl" title="You are here: 18:52:26 Jun 24, 2025">Jun</td>
+            <td class="f" nowrap="nowrap">Jul</td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20250328073551/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544" title="07:35:51 Mar 28, 2025"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0"></a></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 18:52:26 Jun 24, 2025">24</td>
+            <td class="f" nowrap="nowrap"><img src="https://web-static.archive.org/_static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20240618120038/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544" title="18 Jun 2024"><strong>2024</strong></a></td>
+            <td class="c" id="displayYearEl" title="You are here: 18:52:26 Jun 24, 2025">2025</td>
+            <td class="f" nowrap="nowrap">2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544#" title="Share via My Web Archive" style="display: none;">
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in" style="display: inline-block;">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web" style="display: none;"></span>
+        </span>
+                <a class="xxs" href="https://help.archive.org/help/category/the-wayback-machine/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color: rgb(87, 186, 244); font-size: 160%; --darkreader-inline-color: var(--darkreader-text-57baf4, #5abbf4);" data-darkreader-inline-color=""></span></a>
+        <a id="wm-tb-close" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color: rgb(136, 136, 136); font-size: 240%; --darkreader-inline-color: var(--darkreader-text-888888, #9d9488);" data-darkreader-inline-color=""></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="https://web.archive.org/web/20250624185226/http://web.archive.org/screenshot/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544" id="wm-screenshot" title="screenshot" style="visibility: hidden;">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544#" data-url="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color: rgb(59, 89, 152); font-size: 160%; --darkreader-inline-color: var(--darkreader-text-3b5998, #7fa5cd);" data-darkreader-inline-color=""></span></a>
+        <a id="wm-share-twitter" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544#" data-url="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color: rgb(29, 202, 255); font-size: 160%; --darkreader-inline-color: var(--darkreader-text-1dcaff, #2eceff);" data-darkreader-inline-color=""></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top: 1px solid rgb(119, 119, 119); display: none; overflow: hidden; --darkreader-inline-border-top: var(--darkreader-border-777777, #655e53);" data-darkreader-inline-border-top="">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); font-weight: bold; text-align: center; padding: 2px 0px; --darkreader-inline-bgcolor: var(--darkreader-background-666666, #4d5356); --darkreader-inline-color: var(--darkreader-text-ffffff, #e8e6e3);" data-darkreader-inline-bgcolor="" data-darkreader-inline-color="">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/bnl_2025_summer)"></span>
+		<div>Collection: <a style="color: rgb(51, 51, 255); --darkreader-inline-color: var(--darkreader-text-3333ff, #3d84ff);" href="https://archive.org/details/bnl_2025_summer" target="_new" data-darkreader-inline-color=""><span class="wm-title">BNL Summer 2025 Domain Crawl</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 75px; background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 90%, rgb(255, 255, 255) 100%); --darkreader-inline-bgimage: linear-gradient(var(--darkreader-background-ffffff00, rgba(24, 26, 27, 0)) 0%, var(--darkreader-background-ffffff00, rgba(24, 26, 27, 0)) 90%, var(--darkreader-background-ffffff, #181a1b) 100%); --darkreader-inline-bgcolor: initial;" data-darkreader-inline-bgimage="" data-darkreader-inline-bgcolor=""></div>
+	  029-2025-summer domain crawl of the Luxembourg web domain (.lu) performed by Internet Archive on behalf of the National Library of Luxembourg / Bibliothèque nationale de Luxembourg.
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); font-weight: bold; text-align: center; padding: 2px 0px; --darkreader-inline-bgcolor: var(--darkreader-background-666666, #4d5356); --darkreader-inline-color: var(--darkreader-text-ffffff, #e8e6e3);" title="Timestamps for the elements of this page" data-darkreader-inline-bgcolor="" data-darkreader-inline-color="">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading"></div>
+    </div>
+    </div>
+  </div></div></div><link rel="stylesheet" type="text/css" href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/banner-styles.css"><link rel="stylesheet" type="text/css" href="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/iconochive.css"><div class="wb-autocomplete-suggestions " style="left: 135px; top: 4473px; width: 1506px;"></div></template>
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(750,27,25,2,"web","https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544","20250624185226",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=p7PEIJWi","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+    
+    <header>
+  <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/">Plex Forum</a>
+</header>
+
+    <div id="main-outlet" class="wrap" role="main">
+        <div id="topic-title">
+    <h1>
+      <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544">Using EXT, NTFS, or other format drives (internal or external) on Linux</a>
+    </h1>
+
+      <div class="topic-category" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+            <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/c/plex-media-server/computers/21" class="badge-wrapper bullet" itemprop="item">
+              <span class="badge-category-bg" style="background-color: rgb(224, 227, 230); --darkreader-inline-bgcolor: var(--darkreader-background-e0e3e6, #282b2d);" data-darkreader-inline-bgcolor=""></span>
+              <span class="badge-category clear-badge">
+                <span class="category-name" itemprop="name">Plex Media Server</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="1">
+          </span>
+          <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+            <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/c/plex-media-server/computers/21" class="badge-wrapper bullet" itemprop="item">
+              <span class="badge-category-bg" style="background-color: rgb(224, 227, 230); --darkreader-inline-bgcolor: var(--darkreader-background-e0e3e6, #282b2d);" data-darkreader-inline-bgcolor=""></span>
+              <span class="badge-category clear-badge">
+                <span class="category-name" itemprop="name">Desktops &amp; Laptops</span>
+              </span>
+            </a>
+            <meta itemprop="position" content="2">
+          </span>
+      </div>
+
+      <div class="topic-category">
+        <div class="discourse-tags list-tags">
+            <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/tag/server-linux-tips" class="discourse-tag" rel="tag">server-linux-tips</a>
+        </div>
+      </div>
+  </div>
+
+  
+
+    <div itemscope="" itemtype="http://schema.org/DiscussionForumPosting">
+      <meta itemprop="headline" content="Using EXT, NTFS, or other format drives (internal or external) on Linux">
+      <link itemprop="url" href="https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544">
+      <meta itemprop="datePublished" content="2017-07-09T19:12:25Z">
+        <meta itemprop="articleSection" content="Desktops &amp; Laptops">
+      <meta itemprop="keywords" content="server-linux-tips">
+      <div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="Plex">
+          <div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
+            <meta itemprop="url" content="https://web.archive.org/web/20250624185226/https://global.discourse-cdn.com/plex/original/4X/1/7/4/17473092cf7b57158c59d03f99682aebbd324e05.png">
+          </div>
+      </div>
+
+
+          <div id="post_1" class="topic-body crawler-post">
+            <div class="crawler-post-meta">
+              <span class="creator" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                <a itemprop="url" rel="nofollow" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/u/ChuckPa"><span itemprop="name">ChuckPa</span></a>
+                
+              </span>
+
+                <link itemprop="mainEntityOfPage" href="https://forums.plex.tv/t/using-ext-ntfs-or-other-format-drives-internal-or-external-on-linux/198544">
+
+
+              <span class="crawler-post-infos">
+                  <time datetime="2017-07-09T19:12:25Z" class="post-time">
+                    July 9, 2017,  7:12pm
+                  </time>
+                  <meta itemprop="dateModified" content="2020-11-15T08:53:45Z">
+              <span itemprop="position">1</span>
+              </span>
+            </div>
+            <div class="post" itemprop="text">
+              <p>This document is of primary interest to anyone who has connected <strong>USB drives</strong> or has media on <strong>other internal drives</strong> but user <code>plex</code> can’t access it due to Linux’s default security mechanisms.</p>
+<p><strong>WARNING:   This procedure will not work for SNAP, Docker or other container mechanisms unless expressly handled within the confines of the container.  This procedure is intended for use with the <code>dpkg</code> package.</strong></p>
+<p>We will walk through the steps needed to add these external USB hard drives and  internal hard drives, either formatted as <strong>NTFS</strong> or <strong>ext4</strong>, to your Linux configuration so Plex Media Server can access it.</p>
+<p>This procedure is completely valid and applicable to other formatted filesystems which Linux support.    Some of those include  <strong>hfs</strong>, <strong>exfat</strong> (best accessed as <strong>exfat-fuse</strong> on some systems), and many more.</p>
+<h2><strong>Why We do this</strong></h2>
+<p>On Linux,  when using the graphical desktop environment,  particularly the <strong>Nautilus</strong> file manager which comes with <strong>Gnome</strong>,  Nautilus claims exclusive access to all unmounted media (disks and thumbdrives) and places them in a location only you can access.</p>
+<p>Debian based systems:    <strong>/media/my-user-name/disk-label</strong> .<br>
+Redhat based systems:    <strong>/run/media/my-user-name/disk-label</strong>.</p>
+<p>Because Linux is very strict about permissions,   being the multi-user system it is,   it assumes these unclaimed devices are temporary so mounts them and grants <strong>exclusive access</strong> to your username only.</p>
+<p>The <strong>moment</strong> we log in, it asserts an exclusive-lock to your desktop username as it mounts the drives,  leaving  user <strong>plex</strong> locked out.    No amount of permissions values will allow Plex to see the contents.</p>
+<p>To work through this security,  we must properly manage the media devices.    For purposes of explanation,  we’ll walk through adding 3 such disks.</p>
+<h2><strong>Pre-requisite</strong></h2>
+<p>When using NTFS disks,  you may need to add the <strong>ntfs-3g</strong> or <strong>ntfs</strong> package.   It will be installable from your normal software package manager (<strong>apt-get</strong>, <strong>yum</strong>, or <strong>dnf</strong>).    If you do not have success with one,   try the other.</p>
+<h2>How To</h2>
+<p>Three disks will be added.</p>
+<ol>
+<li>An external ext4-formatted disk.</li>
+<li>An external NTFS-formatted disk.</li>
+<li>An internal hard drive which, in this example, happens to be  NTFS formatted.  It may also be HPFS formatted as Linux supports this natively.</li>
+</ol>
+<p>Any disk formats which Linux supports, regardless of whether internal or external, can be added as shown below.</p>
+<p>For reference purposes, this document was created using Fedora 24 Linux with the Gnome desktop and the Nautilus graphical file manager. Linux shell (command line) commands are <strong>bold</strong> face text.</p>
+<h2><strong>A. Identify the disk(s) you want to add in the graphical disk manager</strong></h2>
+<p>We get the device names, which we only need temporarily, using the command <strong>df</strong></p>
+<pre><code class="lang-auto">[chuck@lizum ~]$ df
+Filesystem  1K-blocks      Used  Available Use% Mounted on&lt;/font&gt;&lt;/font&gt;
+/dev/sda5   128884388  19057076  103257328  16% /
+/dev/sda2      487652    146960     310996  33% /boot
+/dev/sda7   970737276 159145788  762923072  18% /home
+/dev/sda1   831543292 149144996  682398296  18% /run/media/chuck/8E7025AD70259D49
+/dev/sdb1  1922728752  11372564 1911339804   1% /run/media/chuck/Media-3
+/dev/sdc1  1953480700  91720372 1461760328  26% /run/media/chuck/Chuck 2T
+</code></pre>
+<p>We have identified internal disk partition  <code>/dev/sda1</code> and external USB disks “Chuck 2T” and “Media-3” as the disks we want made available to Plex .<br>
+Now we use this information to obtain the rest of the information we need.</p>
+<p><strong><em>The following steps must be performed as the Super-User (root).</em></strong></p>
+<pre><code class="lang-auto">[chuck@lizum ~]$ sudo sh
+Passwd:
+[root@lizum chuck]# 
+</code></pre>
+<h2><strong>B. Create the locations where we will graft everything into Linux</strong></h2>
+<p>The directory `/usb’ has been chosen because Gnome “Nautilus” and Ubuntu (in general) claim exclusive access to anything found in /media.  This prevents conflicts with those desktop components.  <strong>You can use any directory name you wish provided it does not interfere with existing directories and isn’t in your home directory</strong></p>
+<p>In this example, the username ‘chuck’ should be replaced with <em><strong>your actual Linux username</strong></em> . This allows you to maintain full ownership and control of the media without needing to use the superuser (root) account each time.</p>
+<pre><code class="lang-auto"># We're going to create the mount points here:   /usb/c /usb/media3 /usb/chuck2t [root@lizum chuck]# mkdir /usb /usb/c /usb/media3 /usb/chuck2t
+[root@lizum chuck]# chown -R chuck:chuck /usb
+[root@lizum chuck]# chmod -R 755 /usb
+
+[root@lizum chuck]# ls -la /usb
+drwxr-xr-x   3 chuck chuck 4096 Jul 27 11:14 .
+dr-xr-xr-x. 30  root  root 4096 Jul 27 11:14 ..
+drwxr-xr-x   4 chuck chuck 4096 Jul 27 11:04 c
+drwxr-xr-x   4 chuck chuck 4096 Jul 27 11:04 chuck2t
+drwxr-xr-x   4 chuck chuck 4096 Jul 27 11:04 media3
+[root@lizum chuck]#
+</code></pre>
+<p>Having created the directories as root,  verify empty (unmounted) directory permissions are <code>0755</code> before mounting</p>
+<h2><strong>C. Get the ‘Block Id’ or device name (/dev/sdxx) of the disk partition(s) we are interested in</strong></h2>
+<p>Get the label UUIDs for the <strong>USB</strong> drives (format does not matter) because their device names can change.   This ensures they always mount at the same location. This step also provides us with the partition’s format.<br>
+We will need this.</p>
+<pre><code class="lang-auto">[root@lizum chuck]# blkid /dev/sda1
+/dev/sda1: UUID="8E7025AD70259D49" TYPE="ntfs" PARTUUID="000ac519-01"
+
+[root@lizum chuck]# blkid /dev/sdb1
+/dev/sdb1: LABEL="Media-3" UUID="50f1a141-bc8a-48ba-9b29-8a7bee8043e9" TYPE="ext4" PARTUUID="d456a9a6-9727-4143-be3e-f946400ec3ba"
+
+[root@lizum chuck]# blkid /dev/sdc1
+/dev/sdc1: LABEL="Chuck 2T" UUID="56EA5848EA582691" TYPE="ntfs" PARTUUID="542c75ae-01"
+</code></pre>
+<p><strong><em>We now have both the UUID and partition formatting.   Both pieces are needed below.</em></strong></p>
+<h2><strong>D. Create the entry in the file system table where to mount the disk each time the system boots</strong></h2>
+<p>Now we’re going to bring together the directories we created in step <strong>B</strong> with the information we gathered in step <strong>C</strong> for Linux to use.</p>
+<p>Edit the file system table Linux uses to mount all drives using your favorite text editor.  Text editors commonly found are: <strong>vi</strong>, <strong>gedit</strong>, and <strong>xed</strong>.</p>
+<p>Gedit is a graphical-based editor (WYSIWYG) and may be easier as it’s more like Microsoft editors.</p>
+<p><strong>For the USB drives:</strong></p>
+<p>Create lines for your system like the lines below, pasting  <code>UUID=</code> <strong>value</strong> and TYPE (<code>ntfs</code> or <code>ext4</code>) from above, plus the directory locations just created where the external drives will always be found.</p>
+<p>Best practice for USB drives is to use the  <code>UUID=</code> method.    USB drives will change physical device name from use to use.    <code>UUID=</code> guarantees they always are mounted in the same location.</p>
+<p><strong>Use caution editing /etc/fstab. Mistakes can force you to take manual recovery/editing steps in command line mode</strong> ONLY** comment out the erred line(s) during recovery**</p>
+<pre><code class="lang-auto">[root@lizum chuck]# vi /etc/fstab  (or use whatever text editor is available / favorite  and add the following lines, using your information)
+
+# Addtions for external and internal drives
+# Mount Media-3 (ext4)  at /usb/media3 for Plex
+UUID=50f1a141-bc8a-48ba-9b29-8a7bee8043e9 /usb/media3  ext4  defaults,auto,rw,nofail 0 1
+
+##
+## - INFO:  Some distributions (Debian/Ubuntu is known) prefer 'ntfs-3g' over 'ntfs'
+##
+# Mount Chuck-2T (NTFS) at /usb/chuck2t for Plex
+UUID=56EA5848EA582691                     /usb/chuck2t ntfs  defaults,auto,rw,nofail 0 1
+
+# Mount /dev/sda1 directly  READ-ONLY,  and use the device name because it will never change
+/dev/sda1                                 /usb/c       ntfs  defaults,auto,ro,nofail 0 1
+</code></pre>
+<p><em><strong>NOTE:  Mounting hfsplus partitions often requires the ‘force’ option to be included</strong></em></p>
+<p>Save and test.</p>
+<pre><code class="lang-auto"># See where the disks are currently mounted (df) and unmount each
+root@lizum chuck]# df
+root@lizum chuck]# umount /run/media/chuck/Media-3
+root@lizum chuck]# umount /run/media/chuck/Chuck2T
+
+# mount each one individually to verify no errors
+[root@lizum chuck]# mount /usb/media3
+[root@lizum chuck]# mount /usb/chuck2t
+[root@lizum chuck]# mount /usb/c
+[root@lizum chuck]# ls  /usb/*         # this will produce a lot of output if correct.  Be prepared
+</code></pre>
+<h2><strong>E. Restart the computer and verify all is as expected</strong></h2>
+<pre><code class="lang-auto">[chuck@lizum ~]$ ls /usb/*    # The output here should be the same as the previous test above
+
+
+[chuck@lizum ~]$ df 
+Filesystem  1K-blocks      Used  Available Use% Mounted on&lt;/font&gt;&lt;/font&gt;
+/dev/sda5   128884388  19057076  103257328  16% /
+/dev/sda2      487652    146960     310996  33% /boot
+/dev/sda7   970737276 159145788  762923072  18% /home
+/dev/sda1   831543292 149144996  682398296  18% /usb/c
+/dev/sdb1  1922728752  11372564 1911339804   1% /usb/media3
+/dev/sdc1  1953480700 491720372 1461760328  26% /usb/chuck2t
+
+[chuck@lizum ~]$
+</code></pre>
+<h2><strong>F. Correct (set) Linux file permissions (ext4 drives only)</strong></h2>
+<p>Drives are now mounted.   Verify PMS can read them.<br>
+NTFS drives do not require permissions to be set for Linux because they use a different mechanism.<br>
+We will only address the ext4 formatted drive.</p>
+<pre><code class="lang-auto">[chuck@lizum ~]$ su
+Password:
+
+# change the default permissions to owner='rwx', everyone else to 'r-x' 
+#  'x' means to traverse the directory to subdirectories &amp; files
+[root@lizum chuck]# find /usb/media3 -type d -exec chmod 755 {} \;
+
+# change the default permissions to owner= 'rw-',  everyone else 'r-only'
+[root@lizum chuck]# find /usb/media3 -type f -exec chmod 644 {} \;
+</code></pre>
+<h2><strong>G. Open Plex and add the external disk to your library</strong></h2>
+<p>With the drives now mounted and permissions set, open PMS and add the media directories (folders) to the appropriate sections.</p>
+<h2><strong>H. Update your Library</strong></h2>
+<p>Manually invoke a Library update if your configuration isn’t already set  to do so (Settings - Server - Library)</p>
+<p><strong>Revisions:</strong></p>
+<p>03-Jul-2019  -  Addition of <strong>exfat / exfat-fuse</strong> reference.</p>
+            </div>
+
+            <div itemprop="interactionStatistic" itemscope="" itemtype="http://schema.org/InteractionCounter">
+              <meta itemprop="interactionType" content="http://schema.org/LikeAction">
+              <meta itemprop="userInteractionCount" content="23">
+              <span class="post-likes">23 Likes</span>
+            </div>
+          </div>
+    </div>
+
+
+    <div id="related-topics" class="more-topics__list " role="complementary" aria-labelledby="related-topics-title">
+  <h3 id="related-topics-title" class="more-topics__list-title">
+    Related topics
+  </h3>
+  <div class="topic-list-container" itemscope="" itemtype="http://schema.org/ItemList">
+    <meta itemprop="itemListOrder" content="http://schema.org/ItemListOrderDescending">
+    <table class="topic-list">
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th></th>
+          <th class="replies">Replies</th>
+          <th class="views">Views</th>
+          <th>Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="topic-list-item" id="topic-list-item-635761">
+            <td class="main-link" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <meta itemprop="position" content="1">
+              <span class="link-top-line">
+                <a itemprop="url" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/alternative-drive-media-access/635761" class="title raw-link raw-topic-link">Alternative drive media access</a>
+              </span>
+              <div class="link-bottom-line">
+                  <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/c/plex-media-server/nas-devices/27" class="badge-wrapper bullet">
+                    <span class="badge-category-bg" style="background-color: rgb(224, 227, 230); --darkreader-inline-bgcolor: var(--darkreader-background-e0e3e6, #282b2d);" data-darkreader-inline-bgcolor=""></span>
+                    <span class="badge-category clear-badge">
+                      <span class="category-name">NAS &amp; Devices</span>
+                    </span>
+                  </a>
+                  <div class="discourse-tags">
+                      <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/tag/server-linux" class="discourse-tag">server-linux</a>
+                      
+                  </div>
+              </div>
+            </td>
+            <td class="replies">
+              <span class="posts" title="posts">2</span>
+            </td>
+            <td class="views">
+              <span class="views" title="views">258</span>
+            </td>
+            <td>
+              December 20, 2020
+            </td>
+          </tr>
+          <tr class="topic-list-item" id="topic-list-item-539473">
+            <td class="main-link" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <meta itemprop="position" content="2">
+              <span class="link-top-line">
+                <a itemprop="url" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/mounting-ntfs-external-drive-tried-everything/539473" class="title raw-link raw-topic-link">Mounting NTFS external drive - tried everything</a>
+              </span>
+              <div class="link-bottom-line">
+                  <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/c/plex-media-server/computers/21" class="badge-wrapper bullet">
+                    <span class="badge-category-bg" style="background-color: rgb(224, 227, 230); --darkreader-inline-bgcolor: var(--darkreader-background-e0e3e6, #282b2d);" data-darkreader-inline-bgcolor=""></span>
+                    <span class="badge-category clear-badge">
+                      <span class="category-name">Desktops &amp; Laptops</span>
+                    </span>
+                  </a>
+                  <div class="discourse-tags">
+                      <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/tag/server-docker" class="discourse-tag">server-docker</a>
+                      
+                  </div>
+              </div>
+            </td>
+            <td class="replies">
+              <span class="posts" title="posts">11</span>
+            </td>
+            <td class="views">
+              <span class="views" title="views">340</span>
+            </td>
+            <td>
+              May 9, 2020
+            </td>
+          </tr>
+          <tr class="topic-list-item" id="topic-list-item-691066">
+            <td class="main-link" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <meta itemprop="position" content="3">
+              <span class="link-top-line">
+                <a itemprop="url" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/help-with-internal-ext4-drive-not-showing-to-plex-after-mounting/691066" class="title raw-link raw-topic-link">Help with internal Ext4 drive not showing to plex after mounting</a>
+              </span>
+              <div class="link-bottom-line">
+                  <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/c/plex-media-server/metadata-adding-files/124" class="badge-wrapper bullet">
+                    <span class="badge-category-bg" style="background-color: rgb(0, 136, 204); --darkreader-inline-bgcolor: var(--darkreader-background-0088cc, #006da3);" data-darkreader-inline-bgcolor=""></span>
+                    <span class="badge-category clear-badge">
+                      <span class="category-name">Metadata &amp; Adding Files</span>
+                    </span>
+                  </a>
+                  <div class="discourse-tags">
+                      <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/tag/server-linux" class="discourse-tag">server-linux</a>
+                      
+                  </div>
+              </div>
+            </td>
+            <td class="replies">
+              <span class="posts" title="posts">4</span>
+            </td>
+            <td class="views">
+              <span class="views" title="views">171</span>
+            </td>
+            <td>
+              May 17, 2021
+            </td>
+          </tr>
+          <tr class="topic-list-item" id="topic-list-item-467487">
+            <td class="main-link" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <meta itemprop="position" content="4">
+              <span class="link-top-line">
+                <a itemprop="url" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/external-hdd-linux/467487" class="title raw-link raw-topic-link">External HDD Linux</a>
+              </span>
+              <div class="link-bottom-line">
+                  <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/c/plex-media-server/computers/21" class="badge-wrapper bullet">
+                    <span class="badge-category-bg" style="background-color: rgb(224, 227, 230); --darkreader-inline-bgcolor: var(--darkreader-background-e0e3e6, #282b2d);" data-darkreader-inline-bgcolor=""></span>
+                    <span class="badge-category clear-badge">
+                      <span class="category-name">Desktops &amp; Laptops</span>
+                    </span>
+                  </a>
+                  <div class="discourse-tags">
+                      <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/tag/server-linux" class="discourse-tag">server-linux</a>
+                      
+                  </div>
+              </div>
+            </td>
+            <td class="replies">
+              <span class="posts" title="posts">36</span>
+            </td>
+            <td class="views">
+              <span class="views" title="views">1150</span>
+            </td>
+            <td>
+              December 30, 2019
+            </td>
+          </tr>
+          <tr class="topic-list-item" id="topic-list-item-400036">
+            <td class="main-link" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <meta itemprop="position" content="5">
+              <span class="link-top-line">
+                <a itemprop="url" href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/t/for-all-whose-drives-arent-detected-on-arch-linux/400036" class="title raw-link raw-topic-link">For all whose drives aren't detected on Arch Linux</a>
+              </span>
+              <div class="link-bottom-line">
+                  <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/c/plex-players/computers/34" class="badge-wrapper bullet">
+                    <span class="badge-category-bg" style="background-color: rgb(224, 227, 230); --darkreader-inline-bgcolor: var(--darkreader-background-e0e3e6, #282b2d);" data-darkreader-inline-bgcolor=""></span>
+                    <span class="badge-category clear-badge">
+                      <span class="category-name">Desktop Players</span>
+                    </span>
+                  </a>
+                  <div class="discourse-tags">
+                      <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/tag/server-linux" class="discourse-tag">server-linux</a>
+                      
+                  </div>
+              </div>
+            </td>
+            <td class="replies">
+              <span class="posts" title="posts">2</span>
+            </td>
+            <td class="views">
+              <span class="views" title="views">553</span>
+            </td>
+            <td>
+              July 13, 2019
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+    </div>
+    <footer class="container wrap">
+  <nav class="crawler-nav">
+    <ul>
+      <li itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+        <span itemprop="name">
+          <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/" itemprop="url">Home </a>
+        </span>
+      </li>
+      <li itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+        <span itemprop="name">
+          <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/categories" itemprop="url">Categories </a>
+        </span>
+      </li>
+      <li itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+        <span itemprop="name">
+          <a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/guidelines" itemprop="url">Guidelines </a>
+        </span>
+      </li>
+        <li itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+          <span itemprop="name">
+            <a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/about/privacy-legal/plex-terms-of-service/" itemprop="url">Terms of Service </a>
+          </span>
+        </li>
+        <li itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+          <span itemprop="name">
+            <a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/about/privacy-legal/" itemprop="url">Privacy Policy </a>
+          </span>
+        </li>
+    </ul>
+  </nav>
+  <p class="powered-by-link">Powered by <a href="https://web.archive.org/web/20250624185226/https://www.discourse.org/">Discourse</a>, best viewed with JavaScript enabled</p>
+</footer>
+
+    <div class="grid-x footer">
+	<div class="large-12 cell footer-main">
+		<div class="foot-container">
+			<div class="grid-x footer-inner">
+				<div class="large-2 medium-12 cell logo">
+					
+						<a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/">
+							<img src="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/plex-logo.svg">
+						</a>
+
+									</div>
+				<div class="large-10 medium-12 cell menu-footer">
+											<div class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-20323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-20323"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/about/">Company</a>
+<ul class="sub-menu">
+	<li id="menu-item-20188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20188"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/about/">About</a></li>
+	<li id="menu-item-19915" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19915"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/careers/">Careers</a></li>
+	<li id="menu-item-20179" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20179"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/about/culture/">Our Culture</a></li>
+	<li id="menu-item-4493" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4493"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/about/giving/">Giving</a></li>
+	<li id="menu-item-12173" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12173"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/about/partners/">Partners</a></li>
+	<li id="menu-item-11462" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11462"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/press/">Press Room</a></li>
+	<li id="menu-item-18818" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18818"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/blog/">The Plex Blog</a></li>
+	<li id="menu-item-79" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-79"><a href="https://web.archive.org/web/20250624185226/https://plex-gear.myshopify.com/">Plex Gear</a></li>
+</ul>
+</li>
+<li id="menu-item-17009" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17009"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/plex-pass/">Plex Pass</a>
+<ul class="sub-menu">
+	<li id="menu-item-17010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17010"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/plex-pass/">Go Premium</a></li>
+	<li id="menu-item-20553" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20553"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/plexamp/">Plexamp</a></li>
+	<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/plex-labs/">Plex Labs</a></li>
+	<li id="menu-item-8572" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8572"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/plex-pass/perks/">Get Perks</a></li>
+</ul>
+</li>
+<li id="menu-item-75" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-75"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/media-server-downloads/">Downloads</a>
+<ul class="sub-menu">
+	<li id="menu-item-18864" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18864"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/media-server-downloads/#plex-media-server">Plex Media Server</a></li>
+	<li id="menu-item-4707" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4707"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/media-server-downloads/#plex-app">Apps &amp; Devices</a></li>
+	<li id="menu-item-18862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18862"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/apps-devices/">Where to Watch</a></li>
+</ul>
+</li>
+<li id="menu-item-8578" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8578"><a href="https://web.archive.org/web/20250624185226/https://support.plex.tv/">Resources</a>
+<ul class="sub-menu">
+	<li id="menu-item-20180" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20180"><a href="https://web.archive.org/web/20250624185226/https://support.plex.tv/">Support</a></li>
+	<li id="menu-item-4551" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4551"><a href="https://web.archive.org/web/20250624185226/https://support.plex.tv/articles">Articles</a></li>
+	<li id="menu-item-4561" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4561"><a href="https://web.archive.org/web/20250624185226/https://forums.plex.tv/">Forums</a></li>
+	<li id="menu-item-8579" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8579"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/contact/?option=plex-pass-billing">Billing Questions</a></li>
+	<li id="menu-item-4599" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4599"><a href="https://web.archive.org/web/20250624185226/https://status.plex.tv/">Status</a></li>
+	<li id="menu-item-11651" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11651"><a href="https://web.archive.org/web/20250624185226/https://support.plex.tv/articles/reporting-security-issues/">Bug Bounty</a></li>
+	<li id="menu-item-9286" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9286"><a href="https://web.archive.org/web/20250624185226/https://cordcutter.plex.tv/">CordCutter</a></li>
+	<li id="menu-item-4569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4569"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/contact/">Contact</a></li>
+</ul>
+</li>
+<li id="menu-item-20346" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20346"><a href="https://web.archive.org/web/20250624185226/https://watch.plex.tv/movies-and-shows">Watch Free</a>
+<ul class="sub-menu">
+	<li id="menu-item-20201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20201"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/live-tv-channels/">TV Channel Finder</a></li>
+	<li id="menu-item-20347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20347"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/what-to-watch/">What to Watch</a></li>
+	<li id="menu-item-20348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20348"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/a24-movies/">A24 collection</a></li>
+</ul>
+</li>
+</ul></div>									</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="large-12 cell footer-sub">
+		<div class="foot-container">
+			<div class="grid-x footer-inner align-middle">
+				<div class="large-7 medium-12 cell menu-sub-footer">
+					<span class="footer-copy">Copyright © 2023 Plex</span>
+
+					<div class="menu-sub-footer-container"><ul id="menu-sub-footer" class="menu"><li id="menu-item-15685" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15685"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/about/privacy-legal/">Privacy &amp; Legal</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-83"><a target="_blank" rel="noopener" href="https://web.archive.org/web/20250624185226/https://www.plex.tv/about/privacy-legal/#adchoices">AdChoices</a></li>
+<li id="menu-item-19660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19660"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/accessibility-statement/">Accessibility</a></li>
+</ul></div>
+						<div class="menu-sub-footer-us-container"><ul id="menu-sub-footer-us" class="menu"><li id="menu-item-20707" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20707 geolocation-hide geolocation-continent-NA-hide nav-item-toggable"><a href="https://web.archive.org/web/20250624185226/https://www.plex.tv/vendors-us/">Do Not Sell or Share My Personal Information / Opt-out of Targeted Advertising</a></li>
+</ul></div>
+
+				<div class="large-5 medium-12 cell menu-social">
+
+					<div class="menu-social-container"><ul id="menu-social" class="menu"><li id="menu-item-67" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-67"><a target="_blank" rel="noopener" href="https://web.archive.org/web/20250624185226/https://twitter.com/plex"><i class="icomoon icon-social-twitter"></i></a></li>
+<li id="menu-item-66" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-66"><a target="_blank" rel="noopener" href="https://web.archive.org/web/20250624185226/https://www.facebook.com/plexapp"><i class="icomoon icon-social-facebook"></i></a></li>
+<li id="menu-item-65" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-65"><a target="_blank" rel="noopener" href="https://web.archive.org/web/20250624185226/https://www.instagram.com/plex.tv/"><i class="icomoon icon-social-instagram"></i></a></li>
+<li id="menu-item-64" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-64"><a target="_blank" rel="noopener" href="https://web.archive.org/web/20250624185226/https://www.linkedin.com/company/plex-inc"><i class="icomoon icon-social-linkedin"></i></a></li>
+<li id="menu-item-63" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-63"><a target="_blank" rel="noopener" href="https://web.archive.org/web/20250624185226/https://www.youtube.com/user/plextvapp"><i class="icomoon icon-social-youtube"></i></a></li>
+</ul></div>
+
+				</div>
+			</div>
+	</div>
+</div></div></div>
+    <script src="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/script.js.download" nonce=""></script><iframe src="./Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops &amp; Laptops - Plex Forum_files/frame.html" title="Plex Status" aria-hidden="true" style="position: fixed; border: none; box-shadow: rgba(9, 20, 66, 0.25) 0px 20px 32px -8px; z-index: 9999; transition: left 1s, bottom 1s, right 1s; height: 115px; width: 320px; left: -9999px; right: -9999px; bottom: 60px; --darkreader-inline-border-top: none; --darkreader-inline-border-right: none; --darkreader-inline-border-bottom: none; --darkreader-inline-border-left: none; --darkreader-inline-boxshadow: var(--darkreader-background-09144240, rgba(7, 16, 53, 0.25)) 0px 20px 32px -8px;" allow="autoplay &#39;self&#39;; fullscreen &#39;self&#39;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left="" data-darkreader-inline-boxshadow="" data-ruffle-polyfilled="" tabindex="-1"></iframe>
+  
+  
+
+
+</body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Plex Media Server</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Plex Media Server for hosting music">
+    <meta name="author" content="Suchit Reddi">
+</head>
+
+<body>
+    <button><a href="..">Back</a></button><br>
+
+
+    <div class="overlay">
+        <h2>Installation</h2>
+
+        Plex is a media server I am currently using to host music on my RPi.<br>
+        <code>
+		    curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -<br>
+			echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list<br>
+			sudo apt update<br>
+			sudo apt install plexmediaserver<br>
+        </code>
+        This should install plexmediaserver on your Pi. If you are using ufw firewall, don't forget to allow 32400 port. <br>
+
+        <h2>Configuration</h2>
+
+        Once installed, if the media is on external storage, Plex can't display it as linux locks the viewing of it or something like that.<br>
+		To bypass this, we should mount the drive on a different path on startup. Follow <a href="Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops & Laptops - Plex Forum.html" target="_blank" rel="noopener nofollow noreferrer">
+		this guide</a>.<br><br>
+        
+		Creating a mount directory with necessary permissions.<br>
+		<code>
+			sudo mkdir /usb /usb/<drive_name><br>
+			sudo chown -R piserver:piserver /usb/<drive_name> #replace with your pi username<br>
+			sudo chmod -R 755 /usb/<drive_name><br>
+		</code><br>
+			
+		Creating mounting entries in fstab<br>
+		<code>
+			blkid /dev/sda1 #replace it with the id of the external device. You can find that using df, lsblk etc.<br>
+			sudo mousepad /etc/fstab<br>
+			# Add these lines in the file<br>
+			
+			#Mounting Seagate Expansion 1tb HDD (rpi_ext_1tb_sea) at /usb/rpi_ext_1tb_sea for plex<br>
+			UUID=<your uuid>                     /usb/rpi_ext_1tb_sea ntfs  defaults,auto,rw,nofail 0 1 <br>
+		</code><br>
+		
+		After creating the mount points, unmount the drive and mount it again.<br>
+		<code>
+			sudo umount /media/piserver/rpi_ext_1tb_sea<br>
+			sudo systemctl daemon-reload<br>
+			sudo mount /usb/rpi_ext_1tb_sea #You might get some permission denied error, but ignore it. To test if it worked, use below command. <br>
+			ls /usb/rpi_ext_1tb_sea/* #All files in all folders will be displayed<br>
+		</code><br>
+		
+		Now, everytime you restart, it will be mounted in the location you specified. Now, you can go to the plex server on your localhost:32400.<br>
+		From that you can use zrok to host it on the internet. Ngrok has a limit on request per minute which disrupts our experience.<br>
+		Install zrok on your RPi <code>curl -sSf https://get.openziti.io/install.bash | sudo bash -s zrok</code>.<br>
+		You can find the code needed to enable zrok from the account. You need to activate it with <code>zrok enable <your_code></code><br>
+		<code>zrok reserve public 32400 -n "plexamp"</code> will reserve the domain name for you. <br>
+		To start share, use <code>zrok share reserved "plexamp"</code>.
+		
+    </div>
+    <button><a href="..">Back</a></button><br>
+
+</body>
+
+
+</html>
