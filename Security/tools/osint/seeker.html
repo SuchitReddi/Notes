@@ -29,7 +29,11 @@
                 rel="noopener nofollow noreferrer">Seeker</a> is for
             finding exact location for phones using GPS, and approximate location for laptops which doesn't have GPS
             hardware.</b>.<br>
-            <br><br>Work in progress
+            <br><br>Seeker essentially shows the victim a spoofed page like "google drive file shared with you" or something.<br>
+            When the victim clicks on it, it will ask for location permission and if the provided, we will get the exact GPS coordinates.<br>
+            If location permission is denied, we still get the IP address. But it just provides us the location of the ISP the victim's device connected to.<br>
+            After installing the tool, it is pretty simple to understand how it works. I ran this tool along with ngrok so that the link seems more legitimate.<br>
+            When you run seeker, it will open a html page on port 8080. So, just send this out through ngrok and the page will be hosted on your ngrok custom domain.<br> 
         </p>
     </div>
     <button><a href="..">Back</a></button><br>
