@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Navidrome Music Server</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Navidrome Server for hosting music">
+    <meta name="author" content="Suchit Reddi">
+</head>
+
+<body>
+    <button><a href="..">Back</a></button><br>
+
+
+    <div class="overlay">
+        <h2>Installation</h2>
+
+        After trying Plex media server, I finally settled on Navidrome as it is specially made for music hosting.<br>
+		It has better playlist management and is extremely simple to setup.<br><br>
+        <code>
+		    sudo wget https://github.com/navidrome/navidrome/releases/download/v0.58.0/navidrome_0.58.0_linux_arm64.tar.gz -O Navidrome.tar.gz\nsudo tar -xvzf Navidrome.tar.gz -C /opt/navidrome/\nsudo chmod +x /opt/navidrome/navidrome\nsudo chown -R piserver:piserver /opt/navidrome\n
+        </code>
+
+		<br><br>
+		<code> 
+			mkdir /etc/navidrome && mousepad /etc/navidrome/navidrome.toml
+		</code>
+
+		<br><br>
+		Inside the config file, paste this.<br>
+		<code>
+			LogLevel = 'DEBUG'<br>
+			Scanner.Schedule = '@every 12h'<br>
+			TranscodingCacheSize = '150MiB'<br>
+			MusicFolder = '/usb/rpi_ext_1tb_sea/Music'<br>
+		</code>
+
+		<br>
+		<code>sudo apt install navidrome</code>
+
+		<br><br>
+        This should install navidrome on your Pi. If you are using ufw firewall, don't forget to allow 4533 port. <br>
+
+        <h2>Configuration</h2>
+
+		To make sure that navidrome can be run from any location, let's create a shortcut in bin folder.<br><br>
+		<code>sudo ln -s /opt/navidrome/navidrome /usr/local/bin/navidrome</code>
+		<br><br>
+
+		To run navidrome, run this command.<br>
+		<code>navidrome --configfile /etc/navidrome/navidrome.toml</code>
+		<br><br>
+
+		Now to setup autostart, lets create a service file.<br>
+		<code>sudo mousepad /etc/systemd/system/navidrome.service</code>
+		<br><br>
+
+		Place the contents from this <a href="../../../Misc/notes/tools/hosting/navidrome_service.txt">text file</a> in your service file. Make changes as required.<br>
+
+		Now that service is set up, enable it and start it using systemctl. To host it out into the open internet, I used tailscale. It provides an IP which can be used as a public IP.<br>
+
+		To use this with android, install Ultrasonic or Tempo from f-droid. There give the ip and port name you get from tailscale or whatever you are using to broadcast to the wild.<br>
+		For windows, you can use Feishin or amp cast.<br><br>
+
+        Once installed, if the media is on external storage, servers can't display it as linux locks the viewing of it or something like that.<br>
+		To bypass this, we should mount the drive on a different path on startup. Follow <a href="Using EXT, NTFS, or other format drives (internal or external) on Linux - Desktops & Laptops - Plex Forum.html" target="_blank" rel="noopener nofollow noreferrer">
+		this guide</a>.<br><br>
+        
+		Creating a mount directory with necessary permissions.<br>
+		<code>
+			sudo mkdir /usb /usb/<drive_name><br>
+			sudo chown -R piserver:piserver /usb/<drive_name> #replace with your pi username<br>
+			sudo chmod -R 755 /usb/<drive_name><br>
+		</code><br>
+			
+		Creating mounting entries in fstab<br>
+		<code>
+			blkid /dev/sda1 #replace it with the id of the external device. You can find that using df, lsblk etc.<br>
+			sudo mousepad /etc/fstab<br>
+			# Add these lines in the file<br>
+			
+			#Mounting Seagate Expansion 1tb HDD (rpi_ext_1tb_sea) at /usb/rpi_ext_1tb_sea for plex<br>
+			UUID=<your uuid>                     /usb/rpi_ext_1tb_sea ntfs  defaults,auto,rw,nofail 0 1 <br>
+		</code><br>
+		
+		After creating the mount points, unmount the drive and mount it again.<br>
+		<code>
+			sudo umount /media/piserver/rpi_ext_1tb_sea<br>
+			sudo systemctl daemon-reload<br>
+			sudo mount /usb/rpi_ext_1tb_sea #You might get some permission denied error, but ignore it. To test if it worked, use below command. <br>
+			ls /usb/rpi_ext_1tb_sea/* #All files in all folders will be displayed<br>
+		</code><br>
+		
+    </div>
+    <button><a href="..">Back</a></button><br>
+
+</body>
+
+
+</html>
