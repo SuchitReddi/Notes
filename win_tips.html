@@ -27,11 +27,18 @@
     
     <div class="white-links">
         <h1> Windows Tips and Tricks </h1>
-        <h2> Backlit Keyboard - Always On </h2>
-        This <a href="https://youtu.be/xJSF78edqo0" target="_blank" rel="noreferrer nofollow noopener">video</a> gives you a brief explanation of how to keep your backlit keyboard on at all times.<br>
-        But, this video doesn't explain in detail what to do on a windows laptop. So, I have a ASUS Vivobook 15 x512fl, and this is the process I followed.<br><br>
-
-        <b>THIS DID NOT WORK</b>
+        <h2> Hiding zip files </h2>
+        <ol>
+            <li>Put all the files you want to hide in "tohide.zip".</li>
+            <li>Take an image file, lets say "nothinghere.png".</li>
+            <li>This command will do the trick. You can hide it in any file extension and save it as any type of file.<br>
+                <code>copy /b nothinghere.png+tohide.zip secret.png</code>
+            </li>
+            <li>To view the hidden contents, open this file in 7zip file manager or any unzipping app.</li>
+            <li>You can extract the files directly from 7zip or you can use this command.<br>
+                <code>copy /b secret.png tohide.zip</code>
+            </li>
+        </ol>
     </div>
     
     <button><a href=".">Back</a></button><br>
