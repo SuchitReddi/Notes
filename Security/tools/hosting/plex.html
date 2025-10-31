@@ -61,11 +61,11 @@
 		</code><br>
 		
 		Now, everytime you restart, it will be mounted in the location you specified. Now, you can go to the plex server on your localhost:32400.<br>
-		From that you can use zrok to host it on the internet. Ngrok has a limit on request per minute which disrupts our experience.<br>
+		From that you can use zrok to access it on the internet. Ngrok has a limit on request per minute which disrupts our experience.<br>
 		Install zrok on your RPi <code>curl -sSf https://get.openziti.io/install.bash | sudo bash -s zrok</code>.<br>
 		You can find the code needed to enable zrok from the account. You need to activate it with <code>zrok enable <your_code></code><br>
 		<code>zrok reserve public 32400 -n "plexamp"</code> will reserve the domain name for you. <br>
-		To start share, use <code>zrok share reserved "plexamp"</code>.
+		To start share, use <code>zrok share reserved "plexamp"</code>.<br><br>
 		
     </div>
     <button><a href="..">Back</a></button><br>

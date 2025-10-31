@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Jellyfin Media Server</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Plex Media Server for hosting music">
+    <meta name="author" content="Suchit Reddi">
+</head>
+
+<body>
+    <button><a href="..">Back</a></button><br>
+
+
+    <div class="overlay">
+        <h2>About Jellyfin</h2>
+        
+        Jellyfin is like your personal Netflix or some OTT. You can store your media... be it movies or shows on a hard disk connected to the server running Jellyfin.<br>
+        You can use Jellyfin's own media player or even use external players with it. It has both windows and android apps. Most importantly, it is open-source.<br>
+
+        <h2>Installation</h2>
+
+        After trying out Plex Media Server, I shifted to Jellyfin. It is open source and is much better. It automatically sorts the media files and adds metadata and other details.<br>
+		A few issues I faced with Plex are sudden crashes and the app eats up storage very fast. The plexamp app does not work with non-internal networks. Their playlist management is not good either.<br>
+        Jellyfin doesn't keep eating up storage and it has good apps for windows and android.<br><br>
+
+        <code>
+		    curl https://repo.jellyfin.org/debian/jellyfin_team.gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/jellyfin-archive-keyring.gpg >/dev/null<br>
+			echo "deb [signed-by=/usr/share/keyrings/jellyfin-archive-keyring.gpg arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/debian $( lsb_release -c -s ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list<br>
+			sudo apt update<br>
+			sudo apt install jellyfin<br>
+        </code><br>
+
+        This should install Jellyfin on your Pi. If you are using ufw firewall, don't forget to allow 8096 port. <br>
+
+        <h2>Configuration</h2>
+
+        Once installed, if the media is on external storage, Plex can't display it as linux locks the viewing of it or something like that. So, I changed the mount point while using plex.<br>
+        But I don't know if Jellyfin requires that. If it is required, you can check out the process from <a href="../hosting/plex.html" target="_blank" rel="noopener nofollow noreferrer">here.</a><br>
+		
+        Now, you can go to Jellyfin on your http://local_ip:8096.<br>
+		From that you can use zrok to access it on the internet.<br>
+		Install zrok on your RPi <code>curl -sSf https://get.openziti.io/install.bash | sudo bash -s zrok</code>.<br>
+		You can find the code needed to enable zrok from the account. You need to activate it with <code>zrok enable your_code</code><br>
+		<code>zrok reserve public 8096 -n "rpi_jellyfin"</code> will reserve the domain name for you. <br>
+		To start share, use <code>zrok share reserved "rpi_jellyfin"</code>.<br><br>
+		
+    </div>
+    <button><a href="..">Back</a></button><br>
+
+</body>
+
+
+</html>
