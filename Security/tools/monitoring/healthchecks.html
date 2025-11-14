@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Healthcheck</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Heart beat of RPi using Healthchecks.io">
+    <meta name="author" content="Suchit Reddi">
+</head>
+
+<body>
+    <button><a href="..">Back</a></button><br>
+    <div class="overlay">
+        <h2>Configuration</h2>
+
+        Create an account at <a href="https://healthchecks.io/" target="_blank" rel="noopener nofollow noreferrer">healthchecks.io</a>.<br>
+        Once done, you can name the default check you see there. It will have a url having https://hc-ping.com/uuid.<br>
+        Now we just need to make the RPi ping this address at a time interval comfortable to us.<br><br>
+
+        Now we need to create a shell script to ping hte address, and a service to start this script. And we also need to create a timer for this service.<br>
+
+        The contents of the shell script - hc_heartbeat.sh:<br>
+        <code>
+            #!/bin/bash<br>
+            URL="https://hc-ping.com/uuid"<br>
+            # Send heartbeat<br>
+            curl -m 10 --retry 5 "$URL" >/dev/null<br>
+        </code><br><br>
+
+        Now we need to run this script using a service. The contents of this service - /etc/systemd/system/healthcheck.service:<br>
+        <code>
+            [Unit]<br>
+            Description=Healthchecks Heartbeat Service<br><br>
+
+            [Service]<br>
+            Type=oneshot<br>
+            ExecStart=/home/piserver/Desktop/hc_heartbeat.sh<br>
+        </code><br><br>
+
+        Now we need to set a timer for this script. The contents of this timer - /etc/systemd/system/healthcheck.timer:<br>
+        <code>
+            [Unit]<br>
+            Description=Run Healthchecks Heartbeat every 30 seconds<br><br>
+
+            [Timer]<br>
+            Unit=healthcheck.service<br>
+            OnBootSec=15<br>
+            OnUnitActiveSec=60<br><br>
+
+            [Install]<br>
+            WantedBy=timers.target<br>
+        </code><br><br>
+
+        To enable the timer, use these below commands:<br>
+        <code>
+            sudo systemctl daemon-reload<br>
+            sudo systemctl enable healthcheck.timer && sudo systemctl start healthcheck.timer<br>
+        </code><br>
+
+        Everything is setup on the Pi now. You need to edit the check in healthchecks.io now.<br>
+        I set the Schedule Period and Grace Time to 1 minute. Now we will be alerted if we miss ping within 2 minutes.<br>
+        You can set the password for the account to make it more secure than getting a link to the email address.<br> 
+    </div>
+    <button><a href="..">Back</a></button><br>
+
+</body>
+
+
+</html>
