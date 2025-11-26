@@ -61,7 +61,22 @@
 
         Everything is setup on the Pi now. You need to edit the check in healthchecks.io now.<br>
         I set the Schedule Period and Grace Time to 1 minute. Now we will be alerted if we miss ping within 2 minutes.<br>
-        You can set the password for the account to make it more secure than getting a link to the email address.<br> 
+        You can set the password for the account to make it more secure than getting a link to the email address.<br>
+
+        <h2>Service Checks</h2>
+        I am hosting two services on zrok right now. Owncloud (filebrowser) and Ownflix (jellyfin). <br>
+        Autostar and many other startup techniques frequently failed to start up. <br>
+        So, what if I checked if the site is up using curl? If it is not, then I can start the startup script the runs these services. <br><br>
+        <code>
+            if curl -fsS --max-time 10 --retry 5 -D - -o /dev/null "https://ownflix.share.zrok.io"; then<br>
+                echo "$(date) - URL is UP"<br>
+            else<br>
+                echo "$(date) - zrok is DOWN, running the startup script" >> /home/piserver/testrunning.log 2>&1<br>
+                /home/piserver/startup.sh<br>
+            fi<br>
+        </code><br>
+
+        By adding logging for a failed curl, we can log when the script is being started.<br>
     </div>
     <button><a href="..">Back</a></button><br>
 
