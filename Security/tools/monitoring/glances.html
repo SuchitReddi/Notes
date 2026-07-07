@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Glances</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Critical information for RPi web monitoring">
+    <meta name="author" content="Suchit Reddi">
+</head>
+
+<body>
+    <button><a href="..">Back</a></button><br>
+    <div class="overlay">
+        <h2>Setup</h2>
+
+        Github Link: <a href="https://github.com/nicolargo/glances" target="_blank" rel="noopener nofollow noreferrer">Glances</a>.<br>
+        Glances is an open-source system cross-platform monitoring tool. It allows real-time monitoring of various aspects of your system such as CPU, memory, disk, network usage etc. <br>
+        It also allows monitoring of running processes, logged in users, temperatures, voltages, fan speeds etc. It also supports container monitoring. <br>
+        The information is presented in an easy to read dashboard and can also be used for remote monitoring of systems via a web interface or command line interface. <br>
+        It is easy to install and use and can be customized to show only the information that you are interested in. <br><br>
+
+        <pre>
+        cd ~
+        python3 -m venv ~/.venv
+        source ~/.venv/bin/activate
+        pip install glances
+        </pre>
+
+        Now we have to add this as a service on the pi to start it up on boot. <br> <br>
+
+        <pre>
+        [Unit]
+        Description=Glances Web Server
+        After=network.target
+
+        [Service]
+        # Run as your user to match the venv location
+        User=piserver
+        Group=piserver
+        WorkingDirectory=/home/piserver
+
+        # Activate the venv and run glances
+        # We use bash -c to ensure the venv is sourced correctly in the daemon context
+        ExecStart=/home/piserver/.venv/bin/python -m glances -w --bind 0.0.0.0 -u highseas --config /home/piserver/.config/glances/glances.conf
+
+        # Optional: Restart if it crashes
+        Restart=always
+        RestartSec=5
+
+        # Security: Restrict network access if possible (optional but recommended)
+        # PrivateNetwork=false
+
+        [Install]
+        WantedBy=multi-user.target
+        </pre>
+
+        Now for the contents of the config file: <br><br>
+        <pre>
+        [general]
+        # Refresh every 3 seconds to save CPU cycles on the Pi
+        refresh_rate = 3
+
+        [cpu]
+        enable = True
+        show = True
+        # Alert thresholds for CPU
+        warning = 80
+        critical = 95
+
+        [memory]
+        enable = True
+        show = True
+        warning = 85
+        critical = 95
+
+        [fs]
+        enable = True
+        show = True
+        # Warn if disk is > 90% full
+        warning = 90
+        critical = 95
+
+        [diskio]
+        enable = True
+        show = True
+        # Shows Read/Write speed (crucial for SD card health)
+
+        [net]
+        enable = True
+        show = True
+        # Shows Network traffic
+
+        [gpu]
+        enable = True
+        show = True
+        # This forces Glances to try and read VideoCore stats
+        # Note: 'temp' might still show N/A if the specific sensor path isn't detected
+        # but it will show the memory usage correctly.
+
+        [sensors]
+        enable = True
+        show = True
+        # This plugin usually picks up 'core_temp' for the CPU on Raspberry Pi
+        # which solves the "temp: N/A" issue you saw earlier.
+
+        [temperature]
+        enable = True
+        show = True
+        warning = 70
+        critical = 80
+        </pre>
+    </div>
+    <button><a href="..">Back</a></button><br>
+
+</body>
+
+
+</html>

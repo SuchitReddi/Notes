@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Web Admin</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Critical control hub for RPi web monitoring">
+    <meta name="author" content="Suchit Reddi">
+</head>
+
+<body>
+    <button><a href="..">Back</a></button><br>
+    <div class="overlay">
+        <h2>Setup</h2>
+
+        Webmin is a web-based system administration tool for Unix-like servers, and services. <br>
+        Using it, it is possible to configure operating system internals, such as users, disk quotas, services or configuration files, as well as modify, and control open-source apps.<br><br>
+
+        Run the following commands to install it on your raspberry pi: <br><br>
+        <pre>
+        echo "deb https://download.webmin.com/download/repository sarge contrib" | sudo tee /etc/apt/sources.list.d/webmin.list
+        wget -qO - https://download.webmin.com/jcameron-key.asc | sudo apt-key add -   
+        sudo apt update
+        sudo apt install webmin --install-recommends
+        </pre>
+
+        You can unblock port 10000 which is used by webadmin from ufw <code>sudo ufw allow 10000</code> <br>
+        The login credentials are the same as your pi's credentials. <br> <br>
+    </div>
+    <button><a href="..">Back</a></button><br>
+
+</body>
+
+
+</html>

@@ -19,39 +19,39 @@
         Once done, you can name the default check you see there. It will have a url having https://hc-ping.com/uuid.<br>
         Now we just need to make the RPi ping this address at a time interval comfortable to us.<br><br>
 
-        Now we need to create a shell script to ping hte address, and a service to start this script. And we also need to create a timer for this service.<br>
+        Now we need to create a shell script to ping the address, and a service to start this script. And we also need to create a timer for this service.<br>
 
         The contents of the shell script - hc_heartbeat.sh:<br>
-        <code>
-            #!/bin/bash<br>
-            URL="https://hc-ping.com/uuid"<br>
-            # Send heartbeat<br>
-            curl -m 10 --retry 5 "$URL" >/dev/null<br>
-        </code><br><br>
+        <pre>
+        #!/bin/bash
+        URL="https://hc-ping.com/uuid"
+        # Send heartbeat
+        curl -m 10 --retry 5 "$URL" >/dev/null
+        </pre>
 
         Now we need to run this script using a service. The contents of this service - /etc/systemd/system/healthcheck.service:<br>
-        <code>
-            [Unit]<br>
-            Description=Healthchecks Heartbeat Service<br><br>
+        <pre>
+            [Unit]
+            Description=Healthchecks Heartbeat Service
 
-            [Service]<br>
-            Type=oneshot<br>
-            ExecStart=/home/piserver/Desktop/hc_heartbeat.sh<br>
-        </code><br><br>
+            [Service]
+            Type=oneshot
+            ExecStart=/home/piserver/Desktop/hc_heartbeat.sh
+        </pre>
 
         Now we need to set a timer for this script. The contents of this timer - /etc/systemd/system/healthcheck.timer:<br>
-        <code>
-            [Unit]<br>
-            Description=Run Healthchecks Heartbeat every 30 seconds<br><br>
+        <pre>
+            [Unit]
+            Description=Run Healthchecks Heartbeat every 30 seconds
 
-            [Timer]<br>
-            Unit=healthcheck.service<br>
-            OnBootSec=15<br>
-            OnUnitActiveSec=60<br><br>
+            [Timer]
+            Unit=healthcheck.service
+            OnBootSec=15
+            OnUnitActiveSec=60
 
-            [Install]<br>
-            WantedBy=timers.target<br>
-        </code><br><br>
+            [Install]
+            WantedBy=timers.target
+        </pre>
 
         To enable the timer, use these below commands:<br>
         <code>
