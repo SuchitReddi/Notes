@@ -28,6 +28,17 @@
     <div class="overlay">
         <h1> Raspberry Pi Backup </h1>
         <p>
+            <h3>Own method</h3>
+            Let's say the RaspiBackup tool stops working (which actually happened to me for some reason). There is a simple way to automate the dd backup by yourself.<br>
+            I made a script called <a href="/Notes/Misc/notes/tools/backup/backupie.sh" target="_blank">backupie</a>, to maually run backup and restore.<br>
+            I also added extra parameters to run compressed backups and backup cleaning without user intervention.<br>
+            Add the below line to crontab, and backupie will run a compressed backup along with cleaning backups older than latest 3 every Sunday at 4 AM.<br>
+            <pre>0 4 * * 0 /home/piserver/backupie -auto && /home/piserver/backupie -cleanup</pre>
+
+            To restore the backup, take the sd card and insert it into your pc. Use <a href="https://rufus.ie/en/" target="_blank" rel="noreferrer nofollow noopener">Rufus</a>. <br>
+            Just download it, select the sd card, the gz zip file and run it. It will take some time if you pulled the backup from a bigger sd card (more than 16gb). So keep an eye on the logs.<br>
+        </p>
+
             <h3>RaspiBackup Tool</h3>
             Backing up data is important. Large files and storages might be hard to back up and maintain, but something as small as a raspberry pi should not be an issue.<br>
             So I started using a tool for backing up the whole RPi, which can be easily restored if needed.<br>
@@ -39,16 +50,7 @@
             The command to restore a RPi image to a usb drive is:<br>
             <code>sudo dd bs=1M if=path/to/image/fileserver-dd-backup-20240219-231054.img of=/dev/sdb status=progress
             </code><br>
-
-            <h3>Own method</h3>
-            Let's say the above tool stops working. There is a simple way to automate the dd backup by yourself.<br>
-            Just download this <a href="/Notes/Misc/notes/tools/backup/backup.sh" target="_blank">script</a>, and edit the in and out paths as required. You can use crontab to automate the script as you want.<br>
-            Don't forget to give executable rights by using <code>sudo chmod +x backup.sh</code>, and add the following line to crontab:<br>
-            <code>0 3 * * 1 /path/to/backup.sh</code><br>
-            This line runs the script every Monday at 3:00 AM.<br><br>
-
-            I also made a tool called <a href="/Notes/Misc/notes/tools/backup/backupie.sh" target="_blank">backupie</a>, to maually run backup and restore.<br>
-        </p>
+            
     </div>
     <button><a href="..">Back</a></button><br>
 
