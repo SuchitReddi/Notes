@@ -64,20 +64,22 @@
         Also the hostname can be changed to something else. Edit /etc/hosts, and this line should be at the end
         "127.0.1.1 `some juicy name here`".<br>
         You can learn how to do it by checking <a href="/Notes/Security/tools/spoofing/changing MAC address.html"
-            target="_blank" rel="noopener nofollow noreferrer">this</a> guide out.<br>
+            target="_blank" rel="noopener nofollow noreferrer">THIS</a> guide out.<br>
 
-        The configuration of the honeypot is done in the config file. I copied my final <a
+        The configuration of the honeypot is done with the config file. <br>
+        I copied my final <a
             href="/Notes/Misc/notes/tools/monitoring/opencanary.conf" target="_blank"
-            rel="noopener nofollow noreferrer">config</a> file to locations like <code>/root/.opencanary.config</code>
+            rel="noopener nofollow noreferrer">CONFIG</a> file to locations like <code>/root/.opencanary.config</code>
         where opencanary checks for config files.<br>
 
         To send important events as alerts to mail, I developed a <a
             href="/Notes/Misc/notes/tools/monitoring/log-reader.py" target="_blank"
-            rel="noopener nofollow noreferrer">script</a>. This script is run every minute using cron job.<br>
+            rel="noopener nofollow noreferrer">SCRIPT</a>. <br>
+        This script is run every minute using cron job.<br>
         crontab -e<br>
-        Add this below line at the end of the file.<br>
+        Add this below line at the end of the file. You can change the paths however you want.<br>
         <code>
-            */1 * * * * sudo python3 /home/(user)/env/logtool/log-reader.py<br>
+            */1 * * * * python3 /home/piserver/env/logtool/log-reader.py >> /home/piserver/env/logtool/log-reader.log 2>&1<br>
         </code>
 
         The mail received from this script looks like this:<br>

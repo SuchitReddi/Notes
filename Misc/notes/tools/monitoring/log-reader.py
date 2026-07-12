@@ -1,6 +1,6 @@
 import smtplib, ssl
 #import string
-#import os
+import os
 #from time import strftime
 #import sys
 
@@ -12,30 +12,17 @@ SMTP_PASSWORD = "REDACTED"
 
 context = ssl.create_default_context()
 
-EMAILTEMPLATE = """From: Raspberry Pi - sherl0ck
+EMAILTEMPLATE = """From: RPi - piserver
 Subject: New Events on RPi
 
 The game is on! Is this real?
 
 """
 
-LOGFILE = '/home/(user)/opencanary.log'
+LOGFILE = '/var/log/opencanary.log'
+POSITION_FILE = '/var/log/.opencanary_last_pos'
 
-# very basic code to send a simple email to the defined recipient
-def  SendEmail(emailText):
-    emailSent = False
-    try:
-        emailMessage = EMAILTEMPLATE + emailText
-        server = smtplib.SMTP(SMTP_SERVER,587)
-        server.ehlo()
-        server.starttls(context=context)
-        server.login(SMTP_USERNAME, SMTP_PASSWORD)
-        server.sendmail(SMTP_USERNAME, TO_ADDRESS, emailMessage)
-        server.quit()
-        emailSent = True
-    except:
-        print("Error sending Emails - Log not Emptied")
-    return emailSent
+context = ssl.create_default_context()
 
 def findParam(sourceEvent, checkString):
     result = ""
@@ -61,65 +48,142 @@ def CheckLine(sourceEvent):
     logType    = findParam(sourceEvent, "logtype")
 
     # better code would be to use a config file, but for now let's just add some simple cases
-    if destPort == "-1":
-        if destIP == "":
-            # most probably logs like Canary Running!!!
-            sendTheEmail = False
-            print("Basic logs")
-    else:
-        if logType == "13001":
-            if destPort == "161":
-            # Too much SNMP traffic when enabled - should investigate
-                sendTheEmail = False
-                print("SNMP traffic")
-        else:
-            sendTheEmail = True
+    if logType == "1001":
+        sendTheEmail = False
 
-#don't remove the below lines until localtext="" line
-    displayCommand = "{0}:{1} > {2}:{3}  ".format (sourceIP,sourcePort,destIP,destPort)
-    if (sendTheEmail):
-        displayCommand += '\033[31;40m UNKNOWN \033[37;40m\n'
+
+    # Map log types to human-readable names
+    event_name = "UNKNOWN"
+    if sendTheEmail:
+        if logType == "1001": event_name = "Service Started"
+        elif logType == "1002": event_name = "Debug Message"
+        elif logType == "1003": event_name = "Error Log"
+        elif logType == "2000": event_name = "FTP Login Attempt"
+        elif logType == "2001": event_name = "FTP Auth Init"
+        elif logType == "3000": event_name = "HTTP GET Request"
+        elif logType == "3001": event_name = "HTTP POST Login"
+        elif logType == "4000": event_name = "SSH New Connection"
+        elif logType == "4001": event_name = "SSH Version Sent"
+        elif logType == "4002": event_name = "SSH Login Attempt"
+        elif logType == "5000": event_name = "SMB File Open"
+        elif logType == "5001": event_name = "Port Scan (SYN)"
+        elif logType == "5002": event_name = "Port Scan (NMAP)"
+        elif logType == "6001": event_name = "Telnet Login Attempt"
+        elif logType == "6002": event_name = "Telnet Connection"
+        elif logType == "7001": event_name = "HTTP Proxy Login"
+        elif logType == "8001": event_name = "MySQL Login Attempt"
+        elif logType == "9001": event_name = "MSSQL Auth (SQL)"
+        elif logType == "9002": event_name = "MSSQL Auth (Win)"
+        elif logType == "10001": event_name = "TFTP Request"
+        elif logType == "11001": event_name = "NTP Monlist"
+        elif logType == "12001": event_name = "VNC Connection"
+        elif logType == "13001": event_name = "SNMP Command"
+        elif logType == "14001": event_name = "RDP Connection"
+        elif logType == "15001": event_name = "SIP Request"
+        elif logType == "16001": event_name = "Git Clone Request"
+        elif logType == "17001": event_name = "Redis Command"
+        elif logType == "20001": event_name = "MongoDB Login"
+        # Add more as needed
+
+    # Construct display command
+    displayCommand = "{0}:{1} > {2}:{3}  ".format(sourceIP, sourcePort, destIP, destPort)
+    
+    if sendTheEmail:
+        displayCommand += f'\033[31;40m {event_name} \033[37;40m\n'
     else:
         displayCommand += '\033[32;40m Ignored \033[37;40m\n'
 
-    with open("/dev/tty1", "w") as f:
-        f.write(displayCommand)
-        f.close()
+    # Optional: Remove /dev/tty1 write if running as a daemon/service
+    # with open("/dev/tty1", "w") as f:
+    #     f.write(displayCommand)
+    print(displayCommand.strip())
+
+    return sendTheEmail, event_name
 #Investigate this return is resulting in any sendTheEmail's after this being invalid. 
 #But commenting it is stopping emails
-    return sendTheEmail
 
-#main code starts here
+# very basic code to send a simple email to the defined recipient
+def  SendEmail(emailText):
+    try:
+        emailMessage = EMAILTEMPLATE + emailText
+        server = smtplib.SMTP(SMTP_SERVER,587)
+        server.ehlo()
+        server.starttls(context=context)
+        server.login(SMTP_USERNAME, SMTP_PASSWORD)
+        server.sendmail(SMTP_USERNAME, TO_ADDRESS, emailMessage)
+        server.quit()
+        return True
+    except Exception as e:
+        print(f"Error sending email: {e}")
+        return False
+
+def get_last_position():
+    if os.path.exists(POSITION_FILE):
+        with open(POSITION_FILE, 'r') as f:
+            try:
+                return int(f.read().strip())
+            except ValueError:
+                return 0
+    return 0
+
+def save_position(pos):
+    with open(POSITION_FILE, 'w') as f:
+        f.write(str(pos))
+
+# -------- Main Logic --------
+
+last_pos = get_last_position()
+current_size = os.path.getsize(LOGFILE)
+
+# If log was rotated (file size reset), reset position to 0
+if current_size < last_pos:
+    print("Log file rotated detected. Resetting position.")
+    last_pos = 0
+
 localText = ""
 
-file2 = open(LOGFILE,'r')
 #Display the logs neatly.
 count = 0
-for line in file2:
-    sourceIP   = findParam(line.strip(), "src_host")
-    destIP     = findParam(line.strip(), "dst_host")
-    destPort   = findParam(line.strip(), "dst_port")
-    sourcePort = findParam(line.strip(), "src_port")
-    logType    = findParam(line.strip(), "logtype")
-    adjTime    = findParam(line.strip(), "local_time_adjusted")
-    if (CheckLine(line.strip())==True):
-        count +=1
-        localText += "Event {}:\n\n".format(count)
-        localText += "Source IP: {}    Destination IP: {} \nSource Port: {}            Destination Port: {} \nTime: {}\n".format(sourceIP, destIP, sourcePort, destPort, adjTime)
-        localText += "\n{}".format(line)
-        localText += "================================================\n"
-    else:
-        print("ignoring line\n\r")
-file2.close()
+
+with open(LOGFILE, 'r') as file2:
+    file2.seek(last_pos)
+
+    for line in file2:
+        sourceIP   = findParam(line, "src_host")
+        destIP     = findParam(line, "dst_host")
+        destPort   = findParam(line, "dst_port")
+        sourcePort = findParam(line, "src_port")
+        logType    = findParam(line, "logtype")
+        adjTime    = findParam(line, "local_time_adjusted")
+
+        should_email, event_name = CheckLine(line.strip())
+        
+        if should_email:
+            count += 1
+            localText += "Event {}:\n\n".format(count)
+            localText += "Type: {}\n".format(event_name)
+            localText += "Src: {0}:{1}  >  Dest: {2}:{3} \n".format(sourceIP, sourcePort, destIP, destPort)
+            localText += "Time: {}\n".format(adjTime)
+            localText += "\n{}".format(line)
+            localText += "=================================\n"
+            
+            #localText += f"Event {count}:\nSource IP: {sourceIP} > Dest: {destIP}:{destPort}\nTime: {adjTime}\n{line}\n"
+        
+    # Update the position to the current end of the file
+    new_pos = file2.tell()
+    save_position(new_pos)
 
 #print(localText)
 
-if (count > 0):
-    emailsSent= SendEmail(localText)
-    if(emailsSent):
-        print("Sent mail successfully!")
-        #this is a bit crude but acts as a simple emptying of the log file
-        # Only clear the log if the email was sent, if not the log will remain and next time it will re-try
-        file2 = open(LOGFILE,'w')
-        file2.writelines([])
-        file2.close
+if count > 0:
+    print(f"Found {count} new events. Sending email...")
+    if SendEmail(localText):
+        print("Email sent successfully!")
+        # Only clear the log if email was sent successfully
+        # OR: You can choose NOT to clear the log and just rely on the position pointer (safer)
+        # If you want to clear the log to save space:
+        # open(LOGFILE, 'w').close()
+        # But then you must reset the position file to 0 too.
+        # Recommendation: Don't clear the log, just rely on the position pointer.
+    else:
+        print("Email failed. Log not cleared.")
